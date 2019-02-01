@@ -1,0 +1,61 @@
+<template>
+    <div>
+        <v-container dark fluid fill-height :style="{backgroundColor: $vuetify.theme.secondary}">
+            <v-layout column align-space-between>
+                <v-layout wrap style="width:90%; margin:20px auto 0;">
+                    <v-flex xs12 md6>
+                        <v-layout align-center>
+                            <v-img 
+                                :src="require('../assets/sweet.jpg')" 
+                                aspect-ratio="1.7"
+                                style="border-radius:8px; border-size:4px; border-style:solid;"
+                                :style="{borderColor: $vuetify.theme.accent}"
+                            ></v-img>
+                        </v-layout>
+                    </v-flex>
+                    <v-flex xs12 md6>
+                        <v-layout column fill-height align-center justify-center>
+                            <h3 :style="{color: $vuetify.theme.primary}">Kevin Jossendal</h3>
+                            <p :style="{color: $vuetify.theme.primary}" class="about-the-dev">As the creative force behind Jossendal Development, I specialize in using modern frameworks to create everything from the simple to the experimental. What I produce aims to be as much digital art as it is practical application.</p>
+                        </v-layout>
+                    </v-flex>
+                </v-layout>
+            </v-layout>
+        </v-container>
+        <v-layout align-end justify-space-around>
+            <span @click="socialLink('https://www.linkedin.com/in/jossendal-development/')" class="icons" :style="{color: $vuetify.theme.primary}">
+                <i class="fab fa-linkedin"></i>
+            </span>
+            <span @click="socialLink('https://github.com/Balintataw')" class="icons" :style="{color: $vuetify.theme.primary}">
+                <i class="fab fa-github-square"></i>
+            </span>
+            <span @click="mailTo()" class="icons" :style="{color: $vuetify.theme.primary}">
+                <i class="fas fa-envelope-square"></i>
+            </span>
+        </v-layout>
+    </div>
+</template>
+<script>
+export default {
+    methods: {
+        socialLink(url) {
+            window.open(url)
+        },
+        mailTo() {
+            window.location="mailto:jossendal@pm.me?subject=From%20Jossendal.com"
+        }
+    }
+}
+</script>
+<style scoped>
+.about-the-dev {
+    text-align: center;
+    font-size: 18px;
+    margin: 0 12px;
+}
+.icons {
+    color: orange;
+    font-size: 48px;
+    cursor: pointer;
+}
+</style>
