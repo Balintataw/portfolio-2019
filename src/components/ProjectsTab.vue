@@ -27,6 +27,16 @@
                                 </v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
+                        <v-list-tile>
+                            <v-list-tile-content>
+                                <v-list-tile-title>
+                                    <a :style="{color: $vuetify.theme.primary}" 
+                                        class="project-titles"
+                                        @click="$refs.project3.open()" >
+                                    Street Eats - mobile</a>
+                                </v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
                     </v-list>
                 </v-flex>
                 <v-flex xs12 md6 text-center>
@@ -101,6 +111,34 @@
             </div>
             <div slot="detailsButton">
                 <v-btn color="accent" right @click="projectLink('https://github.com/Balintataw/Currency-Converter')">
+                    see repo
+                </v-btn>
+            </div>
+        </joss-dialog>
+        <joss-dialog ref="project3" maxWidth="500">
+            <div slot="modaltitle">Street Eats - Mobile</div>
+            <div slot="modalcontent">
+                <v-layout>
+                    <v-flex xs4>
+                        <h4>Tech Used:</h4>
+                        <ul>
+                            <li>React Native</li>
+                            <li>React Redux</li>
+                            <li>CSS 3</li>
+                            <li>Google Maps Api</li>
+                        </ul>
+                        <v-spacer />
+                        <p>A simple mobile app companion for finding local food trucks open for business.</p>
+                    </v-flex>
+                    <v-flex xs8>
+                        <v-layout wrap justify-space-around>
+                            <img src="../assets/street_eats_mobile.png" class="project-images"/>
+                        </v-layout>
+                    </v-flex>
+                </v-layout>
+            </div>
+            <div slot="detailsButton">
+                <v-btn color="accent" right @click="projectLink('https://github.com/classZero/street-eats-app')">
                     see repo
                 </v-btn>
             </div>

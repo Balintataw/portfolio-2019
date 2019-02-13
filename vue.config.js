@@ -1,8 +1,8 @@
+const path = require('path')
 module.exports = {
-    resolve: {
-        extensions: ['.js', '.vue'],
-        alias: {
-            '@': __dirname + '/src'
-        }
+    publicPath: '/',
+    chainWebpack: config => {
+        config.resolve.alias
+            .set('@', path.resolve(__dirname, 'src'));
     },
 }

@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-layout align-center style="position: absolute; top:15px; left:15px; z-index:1;">
         <v-btn style="outline:none;" fab flat @click.stop="drawer = !drawer"><v-icon>input</v-icon></v-btn>
-        <span style="letter-spacing:0.8em; margin-left:60px; font-size:8px; color:rgb(20,20,20,0.4);">Las Vegas, NV</span>
+        <span class="locale">Las Vegas, NV</span>
     </v-layout>
     <v-navigation-drawer
         style="background-color: #222222;"
@@ -59,5 +59,16 @@ export default {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+    }
+    .locale {
+        letter-spacing:0.8em; 
+        margin-left:60px; 
+        font-size:8px; 
+        color:rgb(20,20,20,0.4);
+    }
+    @media only screen and (max-width: 450px) {        
+        .locale {
+            display: none;
+        }
     }
 </style>
