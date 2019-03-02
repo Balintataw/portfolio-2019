@@ -21,6 +21,17 @@
                                 <v-list-tile-title>
                                     <a 
                                         :style="{color: $vuetify.theme.primary}" 
+                                        class="project-titles" 
+                                        href="https://www.stirfryrepublic.com" 
+                                        _target="blank">Stirfry Republic</a>
+                                </v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                        <v-list-tile>
+                            <v-list-tile-content>
+                                <v-list-tile-title>
+                                    <a 
+                                        :style="{color: $vuetify.theme.primary}" 
                                         class="project-titles"
                                         href="https://www.streeteats.us" 
                                         _target="blank">Street Eats</a>
@@ -56,6 +67,9 @@
                 </v-flex>
             </v-layout>
         </v-layout>
+
+<!-- Begin onerous modals section -->
+
         <joss-dialog ref="project1" maxWidth="80%">
             <div slot="modaltitle">CMS Blog Whitelabel</div>
             <div slot="modalcontent">
@@ -86,6 +100,7 @@
                 </v-btn>
             </div>
         </joss-dialog>
+
         <joss-dialog ref="project2" maxWidth="500">
             <div slot="modaltitle">Currency Converter</div>
             <div slot="modalcontent">
@@ -115,6 +130,7 @@
                 </v-btn>
             </div>
         </joss-dialog>
+
         <joss-dialog ref="project3" maxWidth="500">
             <div slot="modaltitle">Street Eats - Mobile</div>
             <div slot="modalcontent">

@@ -1,12 +1,12 @@
 <template>
   <v-app id="inspire">
     <v-layout align-center style="position: absolute; top:15px; left:15px; z-index:1;">
-        <v-btn style="outline:none;" fab flat @click.stop="drawer = !drawer"><v-icon>input</v-icon></v-btn>
+        <v-btn style="outline:none;" fab flat @click.stop="toggleDrawer"><v-icon>input</v-icon></v-btn>
         <span class="locale">Las Vegas, NV</span>
     </v-layout>
     <v-navigation-drawer
         style="background-color: #222222;"
-        v-model="drawer"
+        :value="drawer"
         disable-resize-watcher
         absolute
         dark
@@ -15,7 +15,7 @@
     >
     <!-- Main Drawer container -->
         <drawer-layout>
-            <v-btn fab flat slot="close" style="outline:none;" @click="drawer = !drawer">
+            <v-btn fab flat slot="close" style="outline:none;" @click="toggleDrawer">
                 <v-icon color="accent" large>highlight_off</v-icon>
             </v-btn>
         </drawer-layout>
@@ -43,13 +43,20 @@ export default {
         'drawer-layout' : DrawerLayout,          
     },
     data: () => ({
-        drawer: false,
     }),
+    methods: {
+        toggleDrawer() {
+            this.$store.dispatch('toggleDrawer');
+        }
+    },
     computed: {
         screenWidth() {
             return window.screen.width;
+        },
+        drawer() {
+            return this.$store.getters.drawer;
         }
-    }
+    },
 }
 </script>
 <style scoped>

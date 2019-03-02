@@ -32,6 +32,9 @@
             <span @click="mailTo()" class="icons" :style="{color: $vuetify.theme.primary}">
                 <i class="fas fa-envelope-square"></i>
             </span>
+            <span @click="play" class="icons" :style="{color: $vuetify.theme.primary}">
+                <i class="fas fa-gamepad"></i>
+            </span>
         </v-layout>
     </div>
 </template>
@@ -43,6 +46,10 @@ export default {
         },
         mailTo() {
             window.location="mailto:jossendal@pm.me?subject=From%20Jossendal.com"
+        },
+        play() {
+            this.$store.dispatch('toggleDrawer');
+            this.$router.push('/shooter');
         }
     }
 }

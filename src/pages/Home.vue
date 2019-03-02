@@ -12,17 +12,11 @@
             <h1 class="text-headline">Jossendal</h1>
             <p class="text-sub-headline">Specializing in front end design, development, and user experience.</p>
         </v-flex>
-        <!-- <login /> -->
     </v-layout>
 </template>
 
 <script>
-    import login from '@/components/Login.vue';
-
     export default {
-        components: {
-            'login' : login,
-        },
         data: () => ({
         }),
         props: {
