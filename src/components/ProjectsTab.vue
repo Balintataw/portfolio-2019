@@ -2,6 +2,7 @@
     <v-container dark fluid fill-height :style="{backgroundColor: $vuetify.theme.secondary}">
         <v-layout column>
             <v-layout wrap>
+                <!-- Professional Projects section -->
                 <v-flex xs12 md6 text-center>
                     <h2 :style="{color: $vuetify.theme.accent}">Professional Projects</h2>
                     <v-list>
@@ -9,7 +10,6 @@
                             <v-list-tile-content>
                                 <v-list-tile-title>
                                     <a 
-                                        :style="{color: $vuetify.theme.primary}" 
                                         class="project-titles" 
                                         href="https://www.smartfences.place" 
                                         _target="blank">GeoFrenzy</a>
@@ -20,7 +20,6 @@
                             <v-list-tile-content>
                                 <v-list-tile-title>
                                     <a 
-                                        :style="{color: $vuetify.theme.primary}" 
                                         class="project-titles" 
                                         href="https://www.stirfryrepublic.com" 
                                         _target="blank">Stirfry Republic</a>
@@ -31,7 +30,6 @@
                             <v-list-tile-content>
                                 <v-list-tile-title>
                                     <a 
-                                        :style="{color: $vuetify.theme.primary}" 
                                         class="project-titles"
                                         href="https://www.streeteats.us" 
                                         _target="blank">Street Eats</a>
@@ -41,7 +39,7 @@
                         <v-list-tile>
                             <v-list-tile-content>
                                 <v-list-tile-title>
-                                    <a :style="{color: $vuetify.theme.primary}" 
+                                    <a 
                                         class="project-titles"
                                         @click="$refs.project3.open()" >
                                     Street Eats - mobile</a>
@@ -50,17 +48,23 @@
                         </v-list-tile>
                     </v-list>
                 </v-flex>
+                <!-- Personal Projects section -->
                 <v-flex xs12 md6 text-center>
                     <h2 :style="{color: $vuetify.theme.accent}">Personal Projects</h2>
                     <v-list>
                         <v-list-tile>
                             <v-list-tile-content >
-                                <v-list-tile-title :style="{color: $vuetify.theme.primary}" class="project-titles" @click="$refs.project1.open()">CMS Blog Whitelabel</v-list-tile-title>
+                                <v-list-tile-title class="project-titles" @click="$refs.project1.open()">CMS Blog Whitelabel</v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
                         <v-list-tile>
                             <v-list-tile-content>
-                                <v-list-tile-title :style="{color: $vuetify.theme.primary}" class="project-titles" @click="$refs.project2.open()">Currency Convertor - mobile</v-list-tile-title>
+                                <v-list-tile-title class="project-titles" @click="$refs.project2.open()">Currency Convertor - mobile</v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                        <v-list-tile>
+                            <v-list-tile-content>
+                                <v-list-tile-title class="project-titles">Meditations - *Coming Soon*</v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
                     </v-list>
@@ -186,5 +190,9 @@ export default {
     font-size: 20px;
     cursor: pointer;
     text-decoration: none;
+    color: var(--v-primary-base);
+}
+.project-titles:hover {
+    color: var(--v-primaryDark-base);
 }
 </style>

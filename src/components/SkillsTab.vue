@@ -33,9 +33,13 @@
     </v-container>
 </template>
 <script>
+
+/* logo images need to be named in accordance with their skill name for proper path */
+
 export default {
     data: () => ({
         skills: [
+            { 'name':'js', 'value': 100, 'color': '#f7d94d' },
             { 'name':'vue', 'value': 100, 'color': '#20c672' },
             { 'name':'react','value': 100, 'color': '#67daf9' },
             { 'name':'nodejs','value': 100, 'color': '#88cf3a' },

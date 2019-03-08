@@ -11,7 +11,13 @@ import App from '@/App';
 
 Vue.use(VeeValidate);
 Vue.use(Vuetify, {
+    iconfont: 'md',
+    options: {
+        customProperties: true
+    },
+    primaryDark: '#8f8776',
     theme: {
+        primaryDark: '#8f8776',
         primary: '#fff3d8',
         secondary: '#222222',
         accent: '#fd7752',
