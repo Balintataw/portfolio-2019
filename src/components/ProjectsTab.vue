@@ -1,73 +1,74 @@
 <template>
     <v-container dark fluid fill-height :style="{backgroundColor: $vuetify.theme.secondary}">
-        <v-layout column>
+        <v-layout column mt-4>
             <v-layout wrap>
                 <!-- Professional Projects section -->
-                <v-flex xs12 md6 text-center>
-                    <h2 :style="{color: $vuetify.theme.accent}">Professional Projects</h2>
-                    <v-list>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-title>
+                <v-flex xs12 md6>
+                    <v-layout column justify-center align-center>
+                        <h2 :style="{color: $vuetify.theme.accent}">Professional Projects</h2>
+                        <v-list>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
                                     <a 
                                         class="project-titles" 
                                         href="https://www.smartfences.place" 
                                         _target="blank">GeoFrenzy</a>
-                                </v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
                                     <a 
                                         class="project-titles" 
                                         href="https://www.stirfryrepublic.com" 
                                         _target="blank">Stirfry Republic</a>
-                                </v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
                                     <a 
                                         class="project-titles"
                                         href="https://www.streeteats.us" 
                                         _target="blank">Street Eats</a>
-                                </v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
                                     <a 
                                         class="project-titles"
                                         @click="$refs.project3.open()" >
                                     Street Eats - mobile</a>
-                                </v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                    </v-list>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                        </v-list>
+                    </v-layout>
                 </v-flex>
                 <!-- Personal Projects section -->
                 <v-flex xs12 md6 text-center>
-                    <h2 :style="{color: $vuetify.theme.accent}">Personal Projects</h2>
-                    <v-list>
-                        <v-list-tile>
-                            <v-list-tile-content >
-                                <v-list-tile-title class="project-titles" @click="$refs.project1.open()">CMS Blog Whitelabel</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-title class="project-titles" @click="$refs.project2.open()">Currency Convertor - mobile</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-title class="project-titles">Meditations - *Coming Soon*</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                    </v-list>
+                    <v-layout column justify-center align-center>
+                        <h2 :style="{color: $vuetify.theme.accent}">Personal Projects</h2>
+                        <v-list>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
+                                    <a class="project-titles" @click="$refs.project1.open()">CMS Blog Whitelabel</a>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
+                                    <a class="project-titles" @click="$refs.project2.open()">Currency Convertor - mobile</a>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
+                                    <a class="project-titles" @click="$refs.project4.open()">AR Car Performance - mobile</a>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
+                                    <a class="project-titles">Meditations - *Coming Soon*</a>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                        </v-list>
+                    </v-layout>
                 </v-flex>
             </v-layout>
         </v-layout>
@@ -163,6 +164,38 @@
                 </v-btn>
             </div>
         </joss-dialog>
+
+        <joss-dialog ref="project4" maxWidth="990">
+            <div slot="modaltitle">AR Car Performance</div>
+            <div slot="modalcontent">
+                <v-layout>
+                    <v-flex xs4>
+                        <h4>Tech Used:</h4>
+                        <ul>
+                            <li>Unity</li>
+                            <li>C#</li>
+                            <li>Vuforia</li>
+                            <li>Wit.ai</li>
+                        </ul>
+                        <v-spacer />
+                        <p>Augmented Reality app for showcasing automobiles in real space. Voice activated responsiveness utilizing AI learning to manipulate the cars features and change colors. This demo can be adapted to display any product for any company.</p>
+                    </v-flex>
+                    <v-flex xs8>
+                        <v-layout wrap justify-space-around>
+                            <img src="../assets/ar_car_screen.jpg" class="project-images"/>
+                            <img src="../assets/ar_car_screen_02.jpg" class="project-images"/>
+                            <img src="../assets/ar_car_screen_01.jpg" class="project-images"/>
+                        </v-layout>
+                    </v-flex>
+                </v-layout>
+            </div>
+            <!-- <div slot="detailsButton">
+                <v-btn color="accent" right @click="projectLink('https://github.com/Balintataw/street-eats-app')">
+                    see repo
+                </v-btn>
+            </div> -->
+        </joss-dialog>
+
     </v-container>
 </template>
 <script>

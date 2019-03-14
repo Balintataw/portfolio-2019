@@ -1,8 +1,14 @@
 <template>
   <v-app id="inspire">
     <v-layout align-center style="position: absolute; top:15px; left:15px; z-index:1;">
-        <v-btn style="outline:none;" fab flat @click.stop="toggleDrawer"><v-icon>input</v-icon></v-btn>
-        <span class="locale">Las Vegas, NV</span>
+        <template v-if="$route.fullPath === '/'">
+            <v-btn flat icon @click.stop="toggleDrawer"><v-icon>input</v-icon></v-btn>
+            <span class="locale">Las Vegas, NV</span>
+        </template>
+        <template v-else>
+            <v-btn flat icon @click.stop="$router.go(-1)"><v-icon>arrow_back</v-icon></v-btn>
+        </template>
+
     </v-layout>
     <v-navigation-drawer
         style="background-color: #222222;"
@@ -44,6 +50,9 @@ export default {
     },
     data: () => ({
     }),
+    mounted() {
+        console.log(this.$route)
+    },
     methods: {
         toggleDrawer() {
             this.$store.dispatch('toggleDrawer');
