@@ -42,6 +42,7 @@ export default {
             { 'name':'js', 'value': 100, 'color': '#f7d94d' },
             { 'name':'vue', 'value': 100, 'color': '#20c672' },
             { 'name':'react','value': 100, 'color': '#67daf9' },
+            { 'name':'angular','value': 100, 'color': '#b52e31' },
             { 'name':'nodejs','value': 100, 'color': '#88cf3a' },
             // { 'name':'Express.js','value': 100, 'color': '#82b440' },
             { 'name':'laravel','value': 100, 'color': '#f26464' },

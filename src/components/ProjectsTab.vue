@@ -54,6 +54,11 @@
                             </v-list-tile>
                             <v-list-tile>
                                 <v-list-tile-content style="align-items:center;">
+                                    <a class="project-titles" @click="$refs.project5.open()">Ravenous</a>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-content style="align-items:center;">
                                     <a class="project-titles" @click="$refs.project2.open()">Currency Convertor - mobile</a>
                                 </v-list-tile-content>
                             </v-list-tile>
@@ -194,6 +199,34 @@
                     see repo
                 </v-btn>
             </div> -->
+        </joss-dialog>
+
+        <joss-dialog ref="project5" maxWidth="500">
+            <div slot="modaltitle">Ravenous</div>
+            <div slot="modalcontent">
+                <v-layout>
+                    <v-flex xs4>
+                        <h4>Tech Used:</h4>
+                        <ul>
+                            <li>Angular 7</li>
+                            <li>Firebase</li>
+                            <li>CSS 3</li>
+                        </ul>
+                        <v-spacer />
+                        <p>A compendium of all things delicious. *Under Current Development*</p>
+                    </v-flex>
+                    <v-flex xs8>
+                        <v-layout wrap justify-space-around>
+                            <img src="../assets/ravenous_home_screen.png" class="project-images"/>
+                        </v-layout>
+                    </v-flex>
+                </v-layout>
+            </div>
+            <div slot="detailsButton">
+                <v-btn color="accent" right @click="projectLink('https://ravenous-recipes.firebaseapp.com')">
+                    see demo
+                </v-btn>
+            </div>
         </joss-dialog>
 
     </v-container>
