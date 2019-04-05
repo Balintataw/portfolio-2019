@@ -10,13 +10,14 @@
                                 aspect-ratio="1.7"
                                 style="border-radius:8px; border-size:4px; border-style:solid;"
                                 :style="{borderColor: $vuetify.theme.accent}"
+                                alt="Best in development history!"
                             ></v-img>
                         </v-layout>
                     </v-flex>
                     <v-flex xs12 md6>
                         <v-layout column fill-height align-center justify-center>
                             <h3 :style="{color: $vuetify.theme.primary}">Kevin Jossendal</h3>
-                            <p :style="{color: $vuetify.theme.primary}" class="about-the-dev">As the creative force behind Jossendal Development, I specialize in using modern frameworks to create everything from the simple to the experimental. What I produce aims to be as much digital art as it is practical application.</p>
+                            <p :style="{color: $vuetify.theme.primary}" class="about-the-dev">As the creative force behind Jossendal Development, I specialize in using JavaScript and modern frameworks to create everything from the simple to the experimental. What I produce aims to be as much digital art as it is practical application.</p>
                         </v-layout>
                     </v-flex>
                 </v-layout>
@@ -42,10 +43,10 @@
 export default {
     methods: {
         socialLink(url) {
-            window.open(url)
+            window.open(url);
         },
         mailTo() {
-            window.location="mailto:jossendal@pm.me?subject=From%20Jossendal.com"
+            window.location="mailto:jossendal@pm.me?subject=From%20Jossendal.com";
         },
         play() {
             this.$store.dispatch('toggleDrawer');

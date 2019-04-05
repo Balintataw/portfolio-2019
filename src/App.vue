@@ -48,11 +48,6 @@ export default {
     components: {
         'drawer-layout' : DrawerLayout,          
     },
-    data: () => ({
-    }),
-    mounted() {
-        console.log(this.$route)
-    },
     methods: {
         toggleDrawer() {
             this.$store.dispatch('toggleDrawer');

@@ -73,7 +73,7 @@
                 default: undefined
             }
         },
-        data: function() {
+        data: () => {
             return {
                 isOpen: false,
                 isLoading: false,

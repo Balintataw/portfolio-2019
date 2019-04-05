@@ -15,14 +15,6 @@
     </v-layout>
 </template>
 
-<script>
-    export default {
-        data: () => ({
-        }),
-        props: {
-        },
-    }
-</script>
 <style scoped>
 .right-bar {
     position: absolute;

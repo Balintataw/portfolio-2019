@@ -13,7 +13,7 @@
                     :color="skill.color"
                     style="margin:10px;"
                     >
-                    <v-img :src="getImageUrl(skill.name)" height="50" width="50"></v-img>
+                    <v-img :src="getImageUrl(skill.name)" height="50" width="50" :alt="'Skill ' + skill.name"></v-img>
                 </v-progress-circular>
             </v-layout>
             <!-- <h3 :style="{color: $vuetify.theme.accent}" style="margin:0 auto;">Some other title</h3>
