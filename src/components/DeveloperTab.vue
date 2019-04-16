@@ -6,7 +6,7 @@
                     <v-flex xs12 md6>
                         <v-layout align-center>
                             <v-img 
-                                :src="require('../assets/sweet.jpg')" 
+                                src="/assets/sweet.jpg" 
                                 aspect-ratio="1.7"
                                 style="border-radius:8px; border-size:4px; border-style:solid;"
                                 :style="{borderColor: $vuetify.theme.accent}"

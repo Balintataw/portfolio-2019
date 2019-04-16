@@ -60,7 +60,7 @@ export default {
     }),
     methods: {
         getImageUrl(type) {
-            return require(`../assets/${type}_logo.png`);
+            return `/assets/${type}_logo.png`;
         }
     }
 }

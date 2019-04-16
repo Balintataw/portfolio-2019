@@ -66,7 +66,7 @@ export default {
 <style scoped>
     #main-content {
         position: relative;
-        background-image: url('./assets/vegas.jpg');
+        background-image: url('/assets/vegas.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
