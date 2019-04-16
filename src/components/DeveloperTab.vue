@@ -16,7 +16,7 @@
                     </v-flex>
                     <v-flex xs12 md6>
                         <v-layout column fill-height align-center justify-center>
-                            <h3 :style="{color: $vuetify.theme.primary}">Kevin Jossendal</h3>
+                            <h3 class="developer-name">Kevin Jossendal</h3>
                             <p :style="{color: $vuetify.theme.primary}" class="about-the-dev">As the creative force behind Jossendal Development, I specialize in using JavaScript and modern frameworks to create everything from the simple to the experimental. What I produce aims to be as much digital art as it is practical application.</p>
                         </v-layout>
                     </v-flex>
@@ -56,9 +56,13 @@ export default {
 }
 </script>
 <style scoped>
+.developer-name {
+    color: var(--v-accent-base);
+    font-size: 1.6rem
+}
 .about-the-dev {
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2rem;
     margin: 0 12px;
 }
 .icons {
