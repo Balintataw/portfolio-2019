@@ -6,7 +6,7 @@
                 <v-flex xs12 md6>
                     <v-layout column justify-center align-center>
                         <h2 class="category-title">Professional Projects</h2>
-                        <v-list class="professional-project-list mr-auto">
+                        <v-list class="professional-project-list" :class="{'mr-auto': $vuetify.breakpoint.smAndUp}">
                             <v-list-tile 
                                 v-for="project in getProfessionalProjects()"
                                 :key="project.title"
@@ -28,7 +28,7 @@
                 <v-flex xs12 md6>
                     <v-layout column justify-center align-center>
                         <h2 class="category-title">Personal Projects</h2>
-                        <v-list class="personal-project-list ml-auto">
+                        <v-list class="personal-project-list" :class="{'ml-auto': $vuetify.breakpoint.smAndUp}">
                             <v-list-tile 
                                 v-for="project in getPersonalProjects()"
                                 :key="project.title"
@@ -363,6 +363,12 @@ export default {
     }
     .project-titles {
         font-size: 2.0rem;
+    }
+}
+@media screen and (max-width:600px) {
+    .project-list-item-right > div > div,
+    .project-list-item-left > div > div {
+        align-items: center;
     }
 }
 @media screen and (max-width:480px) {
