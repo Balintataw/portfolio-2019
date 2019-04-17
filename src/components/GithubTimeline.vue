@@ -7,7 +7,7 @@
         <div class="changelog-list" v-if="repos.length > 0">
             <div class="line"></div>
             <div v-for="repo in repos" :key="repo.id" class="changelog-item not-showing">
-                <div class="date">{{ formatDate(repo.pushed_at) }}</div>
+                <div class="date" v-if="repo.pushed_at">{{ formatDate(repo.pushed_at) }}</div>
                 <div style="flex-direction: column;">
                     <p class="repo-name">{{ repo.name }}</p>
                     <p class="repo-desc">{{ repo.description }}</p>
@@ -45,16 +45,18 @@ export default {
         // get my github data / first 20 repos
         // need to call twice to get all then sort and slice to get recent
         // then finally set up observer
+        // axios.get('https://api.github.com/users/balintataw/repos?per_page=100')
         axios.get('https://api.github.com/user/repos?per_page=100', {
             headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
         })
         .then(resp => {
-            if(resp.data.length === 100) {
-                this.repos = resp.data;
+            this.repos = resp.data;
+            if(resp.data.length >= 100) {
+                // return axios.get('https://api.github.com/user/balintataw/repos?per_page_100&page=2')
                 return axios.get('https://api.github.com/user/repos?per_page=100&page=2', {
                     headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
                 })
-            } 
+            }
         })
         .then(resp => {
             this.repos.push(resp.data)
