@@ -54,46 +54,43 @@
     </v-dialog>
 </template>
 <script>
-    //TODO? make isLoading a prop
-    export default {
-        props: {
-            persistent: {
-                type: Boolean,
-                required:false,
-                default: false
-            },
-            lazy: {
-                type: Boolean,
-                required:false,
-                default: false
-            },
-            maxWidth: {
-                type: String,
-                required: false,
-                default: undefined
-            }
+export default {
+    props: {
+        persistent: {
+            type: Boolean,
+            required:false,
+            default: false
         },
-        data: () => {
-            return {
-                isOpen: false,
-                isLoading: false,
-            };
+        lazy: {
+            type: Boolean,
+            required:false,
+            default: false
         },
-        methods: {
-            open() {
-                this.isOpen = true;
-                this.$emit('opened');
-            },
-            close() {
-                this.isOpen = false;
-                this.$emit('closed');
-            },
-            startLoading() {
-                this.isLoading = true
-            },
-            stopLoading() {
-                this.isLoading = false
-            }
+        maxWidth: {
+            type: String,
+            required: false,
+            default: undefined
+        }
+    },
+    data: () => ({
+        isOpen: false,
+        isLoading: false,
+    }),
+    methods: {
+        open() {
+            this.isOpen = true;
+            this.$emit('opened');
+        },
+        close() {
+            this.isOpen = false;
+            this.$emit('closed');
+        },
+        startLoading() {
+            this.isLoading = true
+        },
+        stopLoading() {
+            this.isLoading = false
         }
     }
+}
 </script>

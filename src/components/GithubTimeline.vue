@@ -45,14 +45,12 @@ export default {
         // get my github data / first 20 repos
         // need to call twice to get all then sort and slice to get recent
         // then finally set up observer
-        // axios.get('https://api.github.com/users/balintataw/repos?per_page=100')
         axios.get('https://api.github.com/user/repos?per_page=100', {
             headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
         })
         .then(resp => {
             this.repos = resp.data;
             if(resp.data.length >= 100) {
-                // return axios.get('https://api.github.com/user/balintataw/repos?per_page_100&page=2')
                 return axios.get('https://api.github.com/user/repos?per_page=100&page=2', {
                     headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
                 })
@@ -66,20 +64,20 @@ export default {
             this.repos = sortedResults.slice(0, 15);
         })
         .catch(err => {
-            this.working= false;
+            this.working = false;
             console.log("Error getting github data", err);
             throw new Error(err)
         })
         .finally(() => {
-            this.working= false;
-            // set up IntersectionObserver, grab all the changelog items
+            this.working = false;
+            // set up IntersectionObserver after repos array has been set, grab all the changelog items
             // retreived from above get request
             const changelogItems = document.querySelectorAll('.changelog-item');
 
             this.observer = new IntersectionObserver(items => {  
                 items.forEach(item => {
                     if (!item.isIntersecting) {
-                        // if item not showing, hide it
+                        // if item not showing, hide it with .not-showing class
                         item.target.classList.add('not-showing')
                         return;
                     }
