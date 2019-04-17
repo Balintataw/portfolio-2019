@@ -37,10 +37,19 @@
                 <i class="fas fa-gamepad"></i>
             </span>
         </v-layout>
+        <v-layout justify-space-around>
+            <github-timeline />
+        </v-layout>
     </div>
 </template>
 <script>
+import GithubTimeline from './GithubTimeline';
+import axios from 'axios';
+
 export default {
+    components: {
+        'github-timeline': GithubTimeline,
+    },
     methods: {
         socialLink(url) {
             window.open(url);
@@ -66,8 +75,8 @@ export default {
     margin: 0 12px;
 }
 .icons {
-    color: orange;
-    font-size: 48px;
+    font-size: 3.6rem;
     cursor: pointer;
+    margin: 20px 0;
 }
 </style>
