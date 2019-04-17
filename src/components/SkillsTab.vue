@@ -78,12 +78,12 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0%;
+    top: -10%;
     left: 0%;
     background: url('/assets/code_sample.png') 10px 0px no-repeat;
     background-size: cover;
     -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg) scale(1.5);
+    transform: rotate(-30deg) scale(1.7);
 }
 </style>
 

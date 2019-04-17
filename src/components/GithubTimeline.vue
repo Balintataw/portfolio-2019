@@ -63,7 +63,7 @@ export default {
             let sortedResults = this.repos.sort((a, b) => {
                 return a.pushed_at > b.pushed_at ? -1 : a.pushed_at < b.pushed_at ? 1 : 0;
             })
-            this.repos = sortedResults.slice(0, 20);
+            this.repos = sortedResults.slice(0, 15);
         })
         .catch(err => {
             this.working= false;

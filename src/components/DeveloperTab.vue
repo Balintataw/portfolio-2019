@@ -67,7 +67,7 @@ export default {
 <style scoped>
 .developer-name {
     color: var(--v-accent-base);
-    font-size: 1.6rem
+    font-size: 2.5rem
 }
 .about-the-dev {
     text-align: center;

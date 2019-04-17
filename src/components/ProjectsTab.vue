@@ -5,8 +5,8 @@
                 <!-- Professional Projects section -->
                 <v-flex xs12 md6>
                     <v-layout column justify-center align-center>
-                        <h2 class="category-title">Professional Projects</h2>
                         <v-list class="professional-project-list" :class="{'mr-auto': $vuetify.breakpoint.mdAndUp}">
+                            <h2 class="category-title title-left project-list-item-left">Professional Projects</h2>
                             <v-list-tile 
                                 v-for="project in getProfessionalProjects"
                                 :key="project.title"
@@ -14,8 +14,8 @@
                                 <v-list-tile-content>
                                     <a 
                                         class="project-titles" 
-                                        @mouseenter="changePopupText(project.id)" 
-                                        @mouseleave="popupText = ''"
+                                        @mouseenter="setPopupText(project.id)" 
+                                        @mouseleave="clearPopupText()"
                                         :href="project.url"
                                         v-on="project && project.ref ? { click: () => openModal(project.ref) } : null "
                                         _target="blank">{{ project.title }}</a>
@@ -27,8 +27,8 @@
                 <!-- Personal Projects section -->
                 <v-flex xs12 md6>
                     <v-layout column justify-center align-center>
-                        <h2 class="category-title">Personal Projects</h2>
                         <v-list class="personal-project-list" :class="{'ml-auto': $vuetify.breakpoint.mdAndUp}">
+                            <h2 class="category-title title-right project-list-item-right">Personal Projects</h2>
                             <v-list-tile 
                                 v-for="project in getPersonalProjects"
                                 :key="project.title"
@@ -36,8 +36,8 @@
                                 <v-list-tile-content>
                                     <a 
                                         class="project-titles" 
-                                        @mouseenter="changePopupText(project.id)" 
-                                        @mouseleave="popupText = ''"
+                                        @mouseenter="setPopupText(project.id)" 
+                                        @mouseleave="clearPopupText()"
                                         v-on="project && project.ref ? { click: () => openModal(project.ref) } : null ">
                                         {{ project.title }}
                                     </a>
@@ -116,12 +116,19 @@ export default {
     data() {
         return {
             projects: projectsJson,
-            popupText: ''
+            popupText: 'Check out what we\'re currently working on at Jossendal Development'
         }
     },
     methods: {
-        changePopupText(id) {
+        setPopupText(id) {
             this.popupText = this.projects.data[id].description;
+            let el = document.querySelector('.text-popup')
+            el.classList.toggle('animate-grow');
+        },
+        clearPopupText() {
+            this.popupText = '';
+            let el = document.querySelector('.text-popup')
+            el.classList.toggle('animate-grow');
         },
         projectLink(url) {
             window.open(url);
@@ -158,19 +165,26 @@ export default {
 .project-container {
     background: radial-gradient(circle farthest-side,#fd775248, transparent, transparent);
     height: 85vh;
-    // touch-action: none;
 }
 .category-title {
     color: var(--v-accent-base);
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    text-align: end;
+    &.title-right {
+        text-align: end;
+    }
+    &.title-left {
+        text-align: start;
+    }
 }
+
 .project-images {
     max-height: 200px;
-    /* width: 96%; */
     max-width: 300px;
     margin-bottom: 10px;
     margin-right: 10px;
     margin-left: 10px;
+    border-radius: 8px;
 }
 .project-titles {
     font-family: AvenirNext, Avenir, Helvetica, Arial, sans-serif;
@@ -187,7 +201,7 @@ export default {
     margin-top: 1.2rem;
     touch-action: manipulation;
 }
-.project-list-item-right > div > div {
+.project-list-item-right > div > div, .title-right {
     align-items: flex-end;
 }
 .project-list-item-left > div > div {
@@ -228,11 +242,6 @@ export default {
             animation-delay: $i * 0.05s; 
             animation-fill-mode: both;
         }
-        // .project-list-item-right:nth-child(#{$i}) { 
-        //     animation: recenter 0.5s; 
-        //     animation-delay: $i * 0.05s; 
-        //     animation-fill-mode: both;
-        // }
     }
     .text-popup {
         visibility: hidden;
@@ -245,15 +254,12 @@ export default {
         align-items: center;
     }
 }
-@media screen and (max-width:600px) {
-
-}
 @media screen and (max-width:480px) {
     .project-titles {
         font-size: 1.5rem;
     }
 }
-
+// center text styles
 .text-popup {
     position: absolute;
     top: 0;
@@ -266,9 +272,16 @@ export default {
     justify-content: center;
     align-items: center;
 }
+.animate-grow {
+    animation: grow 0.25s;
+}
 .text-popup > p {
     text-align: center;
     color: var(--v-primary-base);
     font-size: 1.3rem;
+}
+@keyframes grow {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
 }
 </style>
