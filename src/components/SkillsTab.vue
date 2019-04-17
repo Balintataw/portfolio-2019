@@ -1,5 +1,5 @@
 <template>
-    <v-container dark fluid fill-height :style="{backgroundColor: $vuetify.theme.secondary}">
+    <v-container class="container" dark fluid>
         <v-layout column>
             <h3 :style="{color: $vuetify.theme.accent}" style="margin:0 auto;">Preferred Technologies</h3>
             <v-layout wrap justify-center style="width:80%; margin:20px auto 0;">                
@@ -65,3 +65,25 @@ export default {
     }
 }
 </script>
+<style scoped>
+.container {
+    position: relative;
+    background-color: var(--v-secondary-base);
+    overflow: hidden;
+    height: 85vh;
+}
+.container::before {
+    content: "";
+    opacity: 0.2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background: url('/assets/code_sample.png') 10px 0px no-repeat;
+    background-size: cover;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg) scale(1.5);
+}
+</style>
+

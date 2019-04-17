@@ -81,7 +81,6 @@ export default {
 			zoom.style.top = -y + "px"
 		},
 		initEventLoaded() {
-			// emit the "loaded" event if all images have been loaded
 			var promises = [this.$refs.zoom, this.$refs.normal].map(function (image) {
 				return new Promise(function (resolve, reject) {
 					image.addEventListener("load", resolve)

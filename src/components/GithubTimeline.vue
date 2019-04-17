@@ -1,7 +1,7 @@
 <template>
-    <div style="width: 70%;">
+    <v-layout column align-center>
         <v-layout align-center>
-            <h3 class="my-3" style="margin-left:4rem; font-size:2.5rem;" :style="{color:$vuetify.theme.accent}">Recent Activity</h3>
+            <h3 class="my-3" style="font-size:2.5rem;" :style="{color:$vuetify.theme.accent}">Recent Activity</h3>
             <square-spinner v-if="working"/>
         </v-layout>
         <div class="changelog-list" v-if="repos.length > 0">
@@ -17,7 +17,7 @@
         <div v-else>
             <p class="error-message">Sorry, the dev team must be out to lunch or something... Check back later.</p>
         </div>
-    </div>
+    </v-layout>
 </template>
 <script>
 import axios from 'axios';
@@ -100,6 +100,7 @@ $changelogLeftSpacing: 120px;
 
 .changelog-list {
   position: relative;
+  width:70%;
 }
 
 .line {
@@ -162,7 +163,7 @@ $changelogLeftSpacing: 120px;
 }
 .repo-desc {
     color: var(--v-primary-base);
-    width: 70%;
+    // width: 70%;
 }
 .error-message {
     color: var(--v-primary-base);

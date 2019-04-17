@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-toolbar tabs>
+        <v-toolbar tabs style="z-index: 2;">
 
             <v-spacer />
 

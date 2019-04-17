@@ -269,5 +269,6 @@ export default {
 .text-popup > p {
     text-align: center;
     color: var(--v-primary-base);
+    font-size: 1.3rem;
 }
 </style>
