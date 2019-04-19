@@ -20,7 +20,7 @@
         >
         <!-- All Main Drawer content is render here -->
             <drawer-layout>
-                <v-btn fab flat slot="close" style="outline:none;" @click="toggleDrawer">
+                <v-btn name="drawer toggle button" fab flat slot="close" style="outline:none;" @click="toggleDrawer">
                     <v-icon color="accent" large>highlight_off</v-icon>
                 </v-btn>
             </drawer-layout>

@@ -106,6 +106,7 @@
             </div>
             <div slot="detailsButton" v-if="project.button">
                 <v-btn 
+                    :name="`${project.name} button link`"
                     color="accent" 
                     :disabled="!project.button.url" 
                     right 
