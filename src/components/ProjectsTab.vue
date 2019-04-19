@@ -183,7 +183,6 @@ export default {
 .category-title {
     color: var(--v-accent-base);
     font-size: 1.8rem;
-    text-align: end;
     &.title-right {
         text-align: end;
     }
@@ -321,6 +320,14 @@ export default {
     .project-list-item-right > div > div,
     .project-list-item-left > div > div {
         align-items: center;
+    }
+    .category-title {
+        &.title-right {
+            text-align: center;
+        }
+        &.title-left {
+            text-align: center;
+        }
     }
 }
 @media screen and (max-width:480px) {
