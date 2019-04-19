@@ -22,9 +22,23 @@ module.exports = {
     //                 resourceQuery: /blockType=notes/,
     //                 loader: require('ignore-loader') 
     //             }
-    //         ] 
-    //     } 
+    //         ], 
+    //     }, 
     // },
+    pwa: {
+        name: 'Jossendal Development',
+        themeColor: '#4DBA87',
+        msTileColor: '#000000',
+        appleMobileWebAppCapable: 'yes',
+        appleMobileWebAppStatusBarStyle: 'black',
+        // configure the workbox plugin
+        workboxPluginMode: 'InjectManifest',
+        workboxOptions: {
+          // swSrc is required in InjectManifest mode.
+          swSrc: 'src/service-worker.js',
+          // ...other Workbox options...
+        },
+    },
     chainWebpack: (config) => {
         config.resolve.alias
             .set('@', path.resolve(__dirname, 'src'));
@@ -36,17 +50,3 @@ module.exports = {
         //     .options(/blockType=notes/)
     },
 }
-
-
-// module.exports = {
-//     publicPath: '/',
-//     chainWebpack: (config) => {
-//         config.resolve.alias
-//             .set('@', path.resolve(__dirname, 'src'));
-//         config.module
-//             .rule('ignore')
-//             .test(/\.vue$/)
-//             .use('ignore-loader')
-//             .loader(ignoreLoader)
-//     },
-// }

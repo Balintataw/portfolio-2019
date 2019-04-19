@@ -202,6 +202,7 @@ export default {
 }
 .project-titles {
     font-family: AvenirNext, Avenir, Helvetica, Arial, sans-serif;
+    font-display: auto;
     font-size: 2.4rem;
     cursor: pointer;
     text-decoration: none;

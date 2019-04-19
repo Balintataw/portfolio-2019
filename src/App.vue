@@ -2,11 +2,11 @@
     <v-app id="inspire">
         <v-layout align-center style="position: absolute; top:15px; left:15px; z-index:1;">
             <template v-if="$route.fullPath === '/'">
-                <v-btn flat icon @click.stop="toggleDrawer"><v-icon>input</v-icon></v-btn>
+                <v-btn name="open drawer button" flat icon @click.stop="toggleDrawer"><v-icon>input</v-icon></v-btn>
                 <span class="locale">Las Vegas, NV</span>
             </template>
             <template v-else>
-                <v-btn flat icon @click.stop="$router.go(-1)"><v-icon>arrow_back</v-icon></v-btn>
+                <v-btn name="close drawer button" flat icon @click.stop="$router.go(-1)"><v-icon>arrow_back</v-icon></v-btn>
             </template>
         </v-layout>
         <v-navigation-drawer

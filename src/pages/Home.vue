@@ -35,6 +35,7 @@
 }
 .text-headline {
     font-family: AvenirNext, Avenir, Helvetica, Arial, sans-serif;
+    font-display: auto;
     position: absolute;
     right: 20px;
     bottom: 40px;
@@ -42,6 +43,7 @@
 }
 .text-sub-headline {
     font-family: 'Playfair Display', serif;
+    font-display: auto;
     position: absolute;
     bottom: 20px;
     font-size: 16px;

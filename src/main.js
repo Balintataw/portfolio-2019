@@ -9,6 +9,8 @@ import Store  from '@/store';
 // Component File app entry point
 import App from '@/App';
 
+import './registerServiceWorker'
+
 Vue.use(VeeValidate);
 Vue.use(Vuetify, {
     iconfont: 'md',
