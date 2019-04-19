@@ -1,9 +1,19 @@
 /* eslint-disable no-undef */
+/* eslint-disable no-console */
 workbox.setConfig({
     debug: false,
-  });
+});
   
-workbox.precaching.precacheAndRoute([]);
+if (workbox) {
+    console.log(`Workbox is loaded`);
+    self.__precacheManifest = [].concat(self.__precacheManifest || []);
+    workbox.precaching.suppressWarnings();
+    workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+} 
+else {
+    console.log(`Workbox failed to load`);
+}
+// workbox.precaching.precacheAndRoute([]);
 
 workbox.routing.registerRoute(
     /\.(?:png|gif|jpg|jpeg|svg)$/,
@@ -29,4 +39,8 @@ workbox.routing.registerRoute(
       ],
     }),
 );
+
+self.addEventListener("message", (e)=>{
+    if (e.data.action=='skipWaiting') self.skipWaiting()
+})
   
