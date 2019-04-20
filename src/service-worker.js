@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 workbox.setConfig({
@@ -7,6 +8,7 @@ workbox.setConfig({
 if (workbox) {
     console.log(`Workbox is loaded`);
     self.__precacheManifest = [].concat(self.__precacheManifest || []);
+    console.log("preCacheManifest", self.__precacheManifest)
     workbox.precaching.suppressWarnings();
     workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 } 
@@ -38,6 +40,13 @@ workbox.routing.registerRoute(
         }),
       ],
     }),
+);
+
+workbox.routing.registerRoute(
+    /\.(?:js|css)$/,
+    new workbox.strategies.StaleWhileRevalidate({
+      cacheName: 'static-resources',
+    })
 );
 
 self.addEventListener("message", (e)=>{
