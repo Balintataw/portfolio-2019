@@ -8,7 +8,6 @@ workbox.setConfig({
 if (workbox) {
     console.log(`Workbox is loaded`);
     self.__precacheManifest = [].concat(self.__precacheManifest || []);
-    console.log("preCacheManifest", self.__precacheManifest)
     workbox.precaching.suppressWarnings();
     workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 } 
