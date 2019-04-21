@@ -33,9 +33,9 @@
             <span @click="mailTo()" class="icons" :style="{color: $vuetify.theme.primary}">
                 <i class="fas fa-envelope-square"></i>
             </span>
-            <span @click="play" class="icons" :style="{color: $vuetify.theme.primary}">
+            <!-- <span @click="play" class="icons" :style="{color: $vuetify.theme.primary}">
                 <i class="fas fa-gamepad"></i>
-            </span>
+            </span> -->
         </v-layout>
         <v-layout justify-space-around>
             <github-timeline />

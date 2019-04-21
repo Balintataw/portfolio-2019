@@ -11,7 +11,7 @@ const router = new Router({
     base: process.env.BASE_URL,
     routes: [
         { path: '/', name: 'home', component: Home, alias: '/home' },
-        { path: '/shooter', name: 'shooter', component: Shooter }
+        // { path: '/shooter', name: 'shooter', component: Shooter }
     ]
 });
 
