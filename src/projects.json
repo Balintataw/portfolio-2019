@@ -16,11 +16,13 @@
             ],
             "images": [
                 {
-                    "url": "/assets/cms_admin.png",
+                    "url": "/assets/cms_admin.webp",
+                    "url_fallback": "/assets/cms_admin.png",
                     "alt": "CMS Admin Dashboard"
                 },
                 {
-                    "url": "/assets/cms_blog.png",
+                    "url": "/assets/cms_blog.webp",
+                    "url_fallback": "/assets/cms_blog.png",
                     "alt": "Blog post page"
                 }
             ],
@@ -45,7 +47,8 @@
             ],
             "images": [
                 {
-                    "url": "/assets/ravenous_home_screen.png",
+                    "url": "/assets/ravenous_home_screen.webp",
+                    "url_fallback": "/assets/ravenous_home_screen.png",
                     "alt": "Ravenous home scrren"
                 }
             ],
@@ -70,7 +73,8 @@
             ],
             "images": [
                 {
-                    "url": "/assets/currency_converter.jpg",
+                    "url": "/assets/currency_converter.webp",
+                    "url_fallback": "/assets/currency_converter.jpg",
                     "alt": "Currency Converter Home Screen"
                 }
             ],
@@ -94,15 +98,18 @@
             ],
             "images": [
                 {
-                    "url": "/assets/ar_car_screen.jpg",
+                    "url": "/assets/ar_car_screen.webp",
+                    "url_fallback": "/assets/ar_car_screen.jpg", 
                     "alt": "AR Car home select screen"
                 },
                 {
-                    "url": "/assets/ar_car_screen_01.jpg",
+                    "url": "/assets/ar_car_screen_01.webp",
+                    "url_fallback": "/assets/ar_car_screen_01.jpg", 
                     "alt": "Orange Lambo Front"
                 },
                 {
-                    "url": "/assets/ar_car_screen_02.jpg",
+                    "url": "/assets/ar_car_screen_02.webp",
+                    "url_fallback": "/assets/ar_car_screen_02.jpg", 
                     "alt": "Orange Lambo side"
                 }
             ]
@@ -122,15 +129,18 @@
             ],
             "images": [
                 {
-                    "url":"/assets/meditations_1.jpg",
-                    "alt":"Meditations home screen"
-                },
-                {
-                    "url": "/assets/meditations_2.jpg",
+                    "url": "/assets/meditations_2.webp",
+                    "url_fallback":"/assets/meditations_2.jpg",
                     "alt": "Message screen"
                 },
                 {
-                    "url": "/assets/meditations_3.jpg",
+                    "url":"/assets/meditations_1.webp",
+                    "url_fallback":"/assets/meditations_1.jpg",
+                    "alt":"Meditations home screen"
+                },
+                {
+                    "url": "/assets/meditations_3.webp",
+                    "url_fallback":"/assets/meditations_3.jpg",
                     "alt": "Breath guidance screen"
                 }
             ],

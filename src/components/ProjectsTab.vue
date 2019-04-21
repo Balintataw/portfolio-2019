@@ -94,12 +94,13 @@
                                 <zoom-on-hover img-normal="/assets/cms_admin.png" img-zoom="/assets/cms_admin.png" :scale="2" imgAlt="CMS Dashboard"></zoom-on-hover>
                             </div>
                             <img @mousemove="zoomIn($event)" @mouseout="zoomOut($event)" src="../assets/cms_admin.png" class="project-images" alt="CMS Dashboard"/> -->
-                            <img 
-                                v-for="(img, i) in project.images" 
-                                :key="img.alt+i"
-                                :src="img.url"
-                                class="project-images" 
-                                :alt="img.alt"/>
+                            <picture v-for="(img, i) in project.images" :key="img.alt+i">
+                                <source :srcset="img.url" type="image/webp">
+                                <img 
+                                    :src="img.url_fallback"
+                                    class="project-images" 
+                                    :alt="img.alt"/>
+                            </picture>
                         </v-layout>
                     </v-flex>
                 </v-layout>

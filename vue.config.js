@@ -27,8 +27,8 @@ module.exports = {
     // },
     pwa: {
         name: 'Jossendal Development',
-        themeColor: '#4DBA87',
-        msTileColor: '#000000',
+        themeColor: '#fd7752',
+        msTileColor: '#222222',
         appleMobileWebAppCapable: 'yes',
         appleMobileWebAppStatusBarStyle: 'black',
         // configure the workbox plugin
