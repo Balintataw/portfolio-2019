@@ -1,14 +1,14 @@
 <template>
-    <v-container dark fluid fill-height class="project-container">
-        <v-layout column mt-4>
+    <v-container dark fluid fill-height class="project-container pb-0">
+        <v-layout column>
             <v-layout wrap>
                 <!-- Professional Projects section -->
                 <v-flex xs12 md6>
-                    <v-layout column justify-center align-center>
+                    <v-layout column justify-center>
+                            <h2 class="mb-0 category-title title-left">Professional Projects</h2>
                         <v-list 
-                            class="professional-project-list" 
-                            :class="{'mr-auto': $vuetify.breakpoint.mdAndUp}">
-                            <h2 class="category-title title-left project-list-item-left">Professional Projects</h2>
+                            class="professional-project-list list-scroll" 
+                            >
                             <v-list-tile 
                                 v-for="project in getProfessionalProjects"
                                 :key="project.title"
@@ -31,12 +31,12 @@
                     </v-layout>
                 </v-flex>
                 <!-- Personal Projects section -->
-                <v-flex xs12 md6>
-                    <v-layout column justify-center align-center>
+                <v-flex xs12 md6 style="height:100%;">
+                    <v-layout column justify-center style="height: 100%;">
+                            <h2 class="mb-0 category-title title-right ">Personal Projects</h2>
                         <v-list 
-                            class="personal-project-list" 
-                            :class="{'ml-auto': $vuetify.breakpoint.mdAndUp}">
-                            <h2 class="category-title title-right project-list-item-right">Personal Projects</h2>
+                            class="personal-project-list list-scroll" 
+                            >
                             <v-list-tile 
                                 v-for="project in getPersonalProjects"
                                 :key="project.title"
@@ -70,7 +70,7 @@
 
         <joss-dialog 
             v-for="project in getProjectsWithModal" 
-            maxWidth="80%" 
+            :maxWidth="project.maxWidth || '80%'" 
             :ref="project.ref" 
             :key="project.title+project.id">
             <div slot="modaltitle">{{ project.title }}</div>
@@ -115,20 +115,34 @@
                     {{ project.button.text }}
                 </v-btn>
             </div>
+            <div slot="detailsButton" v-if="project.badgeButton">
+                <!-- <v-btn 
+                    :name="`${project.name} button link`"
+                    right 
+                    class="pr-0 pl-0"> -->
+                    <v-img 
+                        :height="50"
+                        :width="100"
+                        style="margin-right:20px; cursor:pointer;"
+                        alt="Google Play store button"
+                        @click="projectLink(project.badgeButton.url)"
+                        :src="project.badgeButton.android" />
+                <!-- </v-btn> -->
+            </div>
         </joss-dialog>
 
     </v-container>
 </template>
 <script>
 import Dialog from '@/components/Dialog.vue';
-import ZoomOnHover from '@/components/ZoomOnHover.vue';
+// import ZoomOnHover from '@/components/ZoomOnHover.vue';
 
 import projectsJson from '../projects.json';
 
 export default {
     components: {
         'joss-dialog': Dialog,
-        'zoom-on-hover': ZoomOnHover,
+        // 'zoom-on-hover': ZoomOnHover,
     },
     data() {
         return {
@@ -180,16 +194,16 @@ export default {
 .project-container {
     background-color: var(--v-secondary-base);
     background: radial-gradient(circle farthest-side,#fd775248, transparent, transparent);
-    height: 85vh;
+    // height: 85vh;
 }
 .category-title {
     color: var(--v-accent-base);
     font-size: 1.8rem;
     &.title-right {
-        text-align: end;
+        align-self: flex-end;
     }
     &.title-left {
-        text-align: start;
+        align-self: flex-start;
     }
 }
 
@@ -200,6 +214,7 @@ export default {
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 5px;
+    box-shadow: 4px 5px 8px 2px grey;
 }
 .project-titles {
     font-family: AvenirNext, Avenir, Helvetica, Arial, sans-serif;
@@ -212,10 +227,35 @@ export default {
 .project-titles:hover {
     color: var(--v-primaryDark-base);
 }
+.professional-project-list {
+    margin-right: auto;
+}
+.personal-project-list {
+    margin-left: auto;
+}
 .professional-project-list, .personal-project-list {
     perspective: 40em;
     margin-top: 1.2rem;
-    touch-action: manipulation;
+    // touch-action: manipulation;
+}
+.list-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 35rem;
+    padding-top: 2.7rem;
+    padding-bottom: 0;
+    &::-webkit-scrollbar {
+        // width: 0.3em;  /* scrollbar space */
+        width: 0em;  /* scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+    // &::-webkit-scrollbar-thumb {
+    //     background-color: var(--v-accent-base);
+    //     border-radius: 8px;
+    // }
+    // &::-webkit-scrollbar-track {
+    //     -webkit-box-shadow: inset 0 0 6px rgba(111,111,111,0.7);
+    // }
 }
 .project-list-item-right > div > div, .title-right {
     align-items: flex-end;
@@ -297,11 +337,14 @@ export default {
     from { transform: scale(0); -webkit-transform: scale(0); }
     to { transform: scale(1); -webkit-transform: scale(1); }
 }
-// Queries section
+
+/* *********  Queries section  *********** */
+
 @media screen and (max-width:960px) {
     .professional-project-list, .personal-project-list {
         perspective: none;
         -webkit-perspective: none;
+        margin: 0 auto;
     }
     @for $i from 1 to 10 {
         .project-list-item-left:nth-child(#{$i}),
@@ -312,6 +355,16 @@ export default {
             -webkit-animation-delay: $i * 0.05s; 
             animation-fill-mode: both;
             -webkit-animation-fill-mode: both;
+        }
+    }
+    .list-scroll {
+        height: auto;
+        padding-top: 0;
+        padding-bottom: 1rem;
+    }
+    .category-title {
+        &.title-right, &.title-left {
+            align-self: center;
         }
     }
     .text-popup {

@@ -42,9 +42,6 @@ export default {
     components: {
         'drawer-layout' : DrawerLayout,          
     },
-    data: () => ({
-        // screenWidth: null
-    }),
     methods: {
         toggleDrawer() {
             this.$store.dispatch('toggleDrawer');
@@ -59,20 +56,7 @@ export default {
             return this.$store.getters.drawer;
         }
     },
-    watch: {
-        screenWidth: {
-            immediate: true,
-            handler(newVal) {
-                console.log("N", newVal)
-            }
-        }
-    },
     mounted() {
-        // this.screenWidth = document.body.clientWidth;
-        // window.addEventListener('resize', () => {
-        //     console.log("resizing", document.body.clientWidth)
-        //     this.screenWidth = document.body.clientWidth
-        // })
         // make the whole serviceworker process into a promise so later on we can
         // listen to it and in case new content is available a toast will be shown
         window.isUpdateAvailable = new Promise(function(resolve, reject) {

@@ -6,7 +6,6 @@ function resolve (dir) {
 }
 
 module.exports = {
-    // baseUrl: './',
     publicPath: '/',
     runtimeCompiler: true,
     // configureWebpack: { 

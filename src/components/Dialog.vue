@@ -46,7 +46,7 @@
                     <slot v-if="!isLoading" name="actionbuttons" />
                 </span>
                 <v-spacer/>
-                <span>
+                <span right>
                     <slot name="detailsButton" />
                 </span>
             </v-card-actions>

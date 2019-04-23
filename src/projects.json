@@ -38,6 +38,7 @@
             "type": "personal",
             "ref": "project1",
             "modal": true,
+            "maxWidth": "60%",
             "tech": [
                 "Angular 7",
                 "Firebase",
@@ -64,6 +65,7 @@
             "type": "personal",
             "ref": "project2",
             "modal": true,
+            "maxWidth": "50%",
             "tech": [
                 "React Native",
                 "Redux",
@@ -118,7 +120,7 @@
             "id": 4,
             "title": "Meditations",
             "description": "An app about what is, not what might be. Receive wisdom from the greatest minds in human history in the form of random quotes. Access to several additional features to help you focus during meditation sessions. Coming Soon for Android devices.",
-            "type": "personal",
+            "type": "professional",
             "ref": "project4",
             "modal": true,
             "tech": [
@@ -196,23 +198,53 @@
         },
         {
             "id": 9,
-            "title": "",
-            "description": ""
+            "title": "Panahon",
+            "description": "A staight to the point weather app. Gives a user current and 5 day weather forecasts for their current location, or by any zip code.",
+            "type": "personal",
+            "ref": "project9",
+            "modal": true,
+            "maxWidth": "60%",
+            "tech": [
+                "Ionic 4",
+                "SCSS",
+                "Angular 7"
+            ],
+            "images": [
+                {
+                    "url": "/assets/panahon_loading.webp",
+                    "url_fallback": "/assets/panahon_loading.jpg",
+                    "alt": "Panahon Weather Load Screen"
+                },
+                {
+                    "url": "/assets/panahon_home.webp",
+                    "url_fallback": "/assets/panahon_home.jpg",
+                    "alt": "Panahon Weather Home Screen"
+                }
+            ],
+            "badgeButton": {
+                "android": "/assets/google-play-badge.png",
+                "url": "http://play.google.com/store/apps/details?id=com.jossendal.panahon"
+            }
         },
         {
             "id": 10,
-            "title": "",
+            "title": "Biffs App",
             "description": ""
         },
         {
             "id": 11,
-            "title": "",
-            "description": ""
+            "title": "Biff",
+            "description": "professional"
         },
         {
             "id": 12,
-            "title": "",
-            "description": ""
+            "title": "Biff",
+            "description": "professional"
+        },
+        {
+            "id": 13,
+            "title": "Biff",
+            "description": "professional"
         }
     ]
 }

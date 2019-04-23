@@ -26,7 +26,7 @@
 .overhyped-tag-container {
     position: absolute;
     top: 30px;
-    left: -40px;
+    left: -45px;
 }
 .overhyped-tag-line {
     font-family: 'Playfair Display', serif;
@@ -39,7 +39,7 @@
     position: absolute;
     right: 20px;
     bottom: 40px;
-    font-size: 13rem;
+    font-size: 12rem;
 }
 .text-sub-headline {
     font-family: 'Playfair Display', serif;
@@ -51,14 +51,14 @@
 }
 .vertical-text {
     position: absolute;
-    bottom: 250px;
-    right: 17px;
+    bottom: 255px;
+    right: 10px;
     writing-mode: tb-rl;
     transform: rotate(-180deg);
     font-size: 3rem;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
   .text-headline {
     font-size: 8rem;
     bottom:60px;
@@ -71,6 +71,18 @@
   .text-sub-headline {
       font-size: 14px;
   }
+}
+@media only screen and (max-width: 640px) {
+    .text-headline {
+        font-size: 6rem;
+    }
+    .vertical-text {
+        bottom: 170px;
+        font-size: 2.2rem;
+    }
+    .text-sub-headline {
+        left: -60px;
+    }
 }
 @media only screen and (max-width: 575px) {
     .overhyped-tag-container {
