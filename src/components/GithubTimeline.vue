@@ -1,8 +1,8 @@
 <template>
     <v-layout column align-center>
-        <v-layout align-center>
+        <v-layout align-center style="position:relative;">
             <h3 class="my-3" style="font-size:2.5rem;" :style="{color:$vuetify.theme.accent}">Recent Activity</h3>
-            <square-spinner v-if="working"/>
+            <square-spinner style="position:absolute; right:-50px; top:20px;" v-if="working"/>
         </v-layout>
         <div class="changelog-list" v-if="repos.length > 0">
             <div class="line"></div>
@@ -42,53 +42,61 @@ export default {
         }
     },
     mounted() {
-        // get my github data / first 20 repos
-        // need to call twice to get all then sort and slice to get recent
-        // then finally set up observer
-        axios.get('https://api.github.com/user/repos?per_page=100', {
-            headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
-        })
-        .then(resp => {
-            this.repos = resp.data;
-            if(resp.data.length >= 100) {
-                return axios.get('https://api.github.com/user/repos?per_page=100&page=2', {
-                    headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
-                })
-            }
-        })
-        .then(resp => {
-            this.repos.push(resp.data)
-            let sortedResults = this.repos.sort((a, b) => {
-                return a.pushed_at > b.pushed_at ? -1 : a.pushed_at < b.pushed_at ? 1 : 0;
+        // console.log("STORE", this.$store)
+        // if(this.$store.getters.githubApiResponse) {
+        //     this.repos = this.$store.getters.githubApiResponse;
+        // } else {
+            // get my github data / first 20 repos
+            // need to call twice to get all then sort and slice to get recent
+            // then finally set up observer
+            axios.get('https://api.github.com/user/repos?per_page=100', {
+                headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
             })
-            this.repos = sortedResults.slice(0, 15);
-        })
-        .catch(err => {
-            this.working = false;
-            console.log("Error getting github data", err);
-            throw new Error(err)
-        })
-        .finally(() => {
-            this.working = false;
-            // set up IntersectionObserver after repos array has been set, grab all the changelog items
-            // retreived from above get request
-            const changelogItems = document.querySelectorAll('.changelog-item');
-
-            this.observer = new IntersectionObserver(items => {  
-                items.forEach(item => {
-                    if (!item.isIntersecting) {
-                        // if item not showing, hide it with .not-showing class
-                        item.target.classList.add('not-showing')
-                        return;
-                    }
-                    
-                    item.target.classList.remove('not-showing')
+            .then(resp => {
+                this.repos = resp.data;
+                // this.$store.dispatch("setGithubApiResponse", this.repos);
+                if(resp.data.length >= 100) {
+                    return axios.get('https://api.github.com/user/repos?per_page=100&page=2', {
+                        headers: { 'Authorization': 'token ' + process.env.VUE_APP_GIT_TOKEN }
+                    })
+                }
+            })
+            .then(resp => {
+                this.repos.push(resp.data)
+                // this.$store.dispatch("setGithubApiResponse", this.repos);
+                let sortedResults = this.repos.sort((a, b) => {
+                    return a.pushed_at > b.pushed_at ? -1 : a.pushed_at < b.pushed_at ? 1 : 0;
                 })
-            });
+                this.repos = sortedResults.slice(0, 15);
+            })
+            .catch(err => {
+                this.working = false;
+                console.log("Error getting github data", err);
+                throw new Error(err)
+            })
+            .finally(() => {
+                this.working = false;
+                this.$store.dispatch("setGithubApiResponse", this.repos);
+                // set up IntersectionObserver after repos array has been set, grab all the changelog items
+                // retreived from above get request
+                const changelogItems = document.querySelectorAll('.changelog-item');
 
-            // start observing
-            changelogItems.forEach(item => this.observer.observe(item));
-        })
+                this.observer = new IntersectionObserver(items => {  
+                    items.forEach(item => {
+                        if (!item.isIntersecting) {
+                            // if item not showing, hide it with .not-showing class
+                            item.target.classList.add('not-showing')
+                            return;
+                        }
+                        
+                        item.target.classList.remove('not-showing')
+                    })
+                });
+
+                // start observing
+                changelogItems.forEach(item => this.observer.observe(item));
+            })
+        // }
     },
 };
 </script>

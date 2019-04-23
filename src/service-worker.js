@@ -42,6 +42,18 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
+    new RegExp('https://api.github.com/(.*)'),
+    workbox.strategies.cacheFirst({
+      cacheName: 'githubapis',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 30,
+        }),
+      ],
+    }),
+);
+
+workbox.routing.registerRoute(
     /\.(?:js|css)$/,
     new workbox.strategies.StaleWhileRevalidate({
       cacheName: 'static-resources',

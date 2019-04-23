@@ -27,9 +27,9 @@
         </v-navigation-drawer>
 
         <v-content id="main-content">
-
+            <keep-alive :max="10">
             <router-view></router-view>
-
+            </keep-alive>
         </v-content>
 
     </v-app>
