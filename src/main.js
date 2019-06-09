@@ -24,6 +24,7 @@ Vue.use(VueAnalytics, {
             if(doc.exists) {
                 return doc.data().id
             } else {
+                // eslint-disable-next-line no-console
                 console.log("Analytics cannot be initialized")
             }
         }),

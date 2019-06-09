@@ -1,14 +1,11 @@
 const path = require('path');
 const ignoreLoader = require('ignore-loader');
-
-function resolve (dir) {
-    return path.join(__dirname, '..', dir)
-}
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     publicPath: '/',
     runtimeCompiler: true,
-    // configureWebpack: { 
+    configureWebpack: { 
     //     resolve: {
     //         alias: {
     //             // 'vue$': 'vue/dist/vue.esm.js',
@@ -24,7 +21,14 @@ module.exports = {
     //             }
     //         ], 
     //     }, 
-    // },
+        plugins: [    
+            new HtmlWebpackPlugin ({
+                inject: true,
+                // index.prod.html has scripts for auto-initializing firebase that dont run in development env
+                template: `${process.env.NODE_ENV === 'production' ? 'public/index.prod.html' : 'public/index.html'}`
+            })
+        ]
+    },
     pwa: {
         name: 'Jossendal Development',
         themeColor: '#fd7752',
