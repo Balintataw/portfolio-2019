@@ -1,250 +1,219 @@
 {
-    "data": [
+  "data": [
+    {
+      "id": 0,
+      "title": "CMS Blog Whitelabel",
+      "description": "A pure Laravel project. Contains a demo blog site using Blade for front end rendering and an admin dashboard for managing users, posts, comments, media, and useage statistics. Created with Laravel 5.7 and Homestead.",
+      "type": "personal",
+      "ref": "project0",
+      "modal": true,
+      "tech": ["Laravel 5.7", "PHP", "MySQL", "Bootstrap 3", "Blade"],
+      "images": [
         {
-            "id": 0,
-            "title": "CMS Blog Whitelabel",
-            "description": "A pure Laravel project. Contains a demo blog site using Blade for front end rendering and an admin dashboard for managing users, posts, comments, media, and useage statistics. Created with Laravel 5.7 and Homestead.",
-            "type": "personal",
-            "ref": "project0",
-            "modal": true,
-            "tech": [
-                "Laravel 5.7",
-                "PHP",
-                "MySQL",
-                "Bootstrap 3",
-                "Blade"
-            ],
-            "images": [
-                {
-                    "url": "/assets/cms_admin.webp",
-                    "url_fallback": "/assets/cms_admin.png",
-                    "alt": "CMS Admin Dashboard"
-                },
-                {
-                    "url": "/assets/cms_blog.webp",
-                    "url_fallback": "/assets/cms_blog.png",
-                    "alt": "Blog post page"
-                }
-            ],
-            "button": {
-                "url": "https://github.com/Balintataw/Content-Management-Whitelabel",
-                "text": "See Repo"
-            }
+          "url": "/assets/cms_admin.webp",
+          "url_fallback": "/assets/cms_admin.png",
+          "alt": "CMS Admin Dashboard"
         },
         {
-            "id": 1,
-            "title": "Ravenous",
-            "description": "A compendium of all things delicious, without all the 'backpacking through Spain' blog stories. *Under Current Development*",
-            "type": "personal",
-            "ref": "project1",
-            "modal": true,
-            "maxWidth": "60%",
-            "tech": [
-                "Angular 7",
-                "Firebase",
-                "AngularFire",
-                "CSS3",
-                "Bootstrap 4"
-            ],
-            "images": [
-                {
-                    "url": "/assets/ravenous_home_screen.webp",
-                    "url_fallback": "/assets/ravenous_home_screen.png",
-                    "alt": "Ravenous home scrren"
-                }
-            ],
-            "button": {
-                "url": "https://ravenous-recipes.firebaseapp.com",
-                "text": "See Demo"
-            }
-        },
-        {
-            "id": 2,
-            "title": "Currency Converter",
-            "description": "A mobile app for converting currencies built with React Native and Fixer.io api. Bootstrapped with Expo.",
-            "type": "personal",
-            "ref": "project2",
-            "modal": true,
-            "maxWidth": "50%",
-            "tech": [
-                "React Native",
-                "Redux",
-                "React Saga",
-                "React Navigation 3",
-                "Expo"
-            ],
-            "images": [
-                {
-                    "url": "/assets/currency_converter.webp",
-                    "url_fallback": "/assets/currency_converter.jpg",
-                    "alt": "Currency Converter Home Screen"
-                }
-            ],
-            "button": {
-                "url": "https://github.com/Balintataw/Currency-Converter",
-                "text": "See Repo"
-            }
-        },
-        {
-            "id": 3,
-            "title": "AR Car Performance",
-            "description": "Augmented Reality app, showcasing automobiles in real space, using Vuforia. Voice activated responsiveness utilizing WitAI to manipulate the cars features and change colors. This demo can be adapted to display any product for any company.",
-            "type": "personal",
-            "ref": "project3",
-            "modal": true,
-            "tech": [
-                "Unity",
-                "Vuforia",
-                "C#",
-                "WitAI"
-            ],
-            "images": [
-                {
-                    "url": "/assets/ar_car_screen.webp",
-                    "url_fallback": "/assets/ar_car_screen.jpg", 
-                    "alt": "AR Car home select screen"
-                },
-                {
-                    "url": "/assets/ar_car_screen_01.webp",
-                    "url_fallback": "/assets/ar_car_screen_01.jpg", 
-                    "alt": "Orange Lambo Front"
-                },
-                {
-                    "url": "/assets/ar_car_screen_02.webp",
-                    "url_fallback": "/assets/ar_car_screen_02.jpg", 
-                    "alt": "Orange Lambo side"
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "title": "Meditations",
-            "description": "An app about what is, not what might be. Receive wisdom from the greatest minds in human history in the form of random quotes. Access to several additional features to help you focus during meditation sessions. Coming Soon for Android devices.",
-            "type": "professional",
-            "ref": "project4",
-            "modal": true,
-            "tech": [
-                "React Native",
-                "Firebase",
-                "RNFirebase",
-                "CSS3"
-            ],
-            "images": [
-                {
-                    "url": "/assets/meditations_2.webp",
-                    "url_fallback":"/assets/meditations_2.jpg",
-                    "alt": "Message screen"
-                },
-                {
-                    "url":"/assets/meditations_1.webp",
-                    "url_fallback":"/assets/meditations_1.jpg",
-                    "alt":"Meditations home screen"
-                },
-                {
-                    "url": "/assets/meditations_3.webp",
-                    "url_fallback":"/assets/meditations_3.jpg",
-                    "alt": "Breath guidance screen"
-                }
-            ],
-            "button": {
-                "url": "",
-                "text": "Coming Soon"
-            }
-        },
-        {
-            "id": 5,
-            "title": "GeoFrenzy",
-            "description": "Geofencing for everyone. Work included sitewide redesign and rebuild of whitelabel portal using Vue.js. Start defining your own rules on your own spaces today. All you need is a geodomain to get started.",
-            "type": "professional",
-            "url": "https://www.smartfences.place"
-        },
-        {
-            "id": 6,
-            "title": "Stirfry Republic",
-            "description": "Best stirfry in the valley! Designed and prototyped a mobile app using Vue.js, Capacitor.js, and Ionic4. Feature focused on a robust user rewards program.",
-            "type": "professional",
-            "url": "https://www.stirfryrepublic.com"
-        },
-        {
-            "id": 7,
-            "title": "Street Eats",
-            "description": "PunchCode Capstone project looking to connect hungry people with the local food truck business. Our very first React.js project.",
-            "type": "professional",
-            "url": "https://www.streeteats.us"
-        },
-        {
-            "id": 8,
-            "title": "Street Eats - App",
-            "description": "React Native app to allow Street Eats users to find trucks on the go.",
-            "type": "professional",
-            "ref": "project8",
-            "modal": true,
-            "tech": [
-                "React Native",
-                "Expo",
-                "Google Maps",
-                "Redux"
-            ],
-            "images": [
-                {
-                    "url": "/assets/street_eats_mobile.png",
-                    "alt": "Street Eats Map screen"
-                }
-            ],
-            "button": {
-                "url": "https://github.com/classZero/street-eats-app",
-                "text": "See Repo" 
-            }
-        },
-        {
-            "id": 9,
-            "title": "Panahon",
-            "description": "A staight to the point weather app. Gives a user current and 5 day weather forecasts for their current location, or by any zip code.",
-            "type": "personal",
-            "ref": "project9",
-            "modal": true,
-            "maxWidth": "60%",
-            "tech": [
-                "Ionic 4",
-                "SCSS",
-                "Angular 7"
-            ],
-            "images": [
-                {
-                    "url": "/assets/panahon_loading.webp",
-                    "url_fallback": "/assets/panahon_loading.jpg",
-                    "alt": "Panahon Weather Load Screen"
-                },
-                {
-                    "url": "/assets/panahon_home.webp",
-                    "url_fallback": "/assets/panahon_home.jpg",
-                    "alt": "Panahon Weather Home Screen"
-                }
-            ],
-            "badgeButton": {
-                "android": "/assets/google-play-badge.png",
-                "url": "http://play.google.com/store/apps/details?id=com.jossendal_dev.panahon"
-            }
-        },
-        {
-            "id": 10,
-            "title": "Biffs App",
-            "description": ""
-        },
-        {
-            "id": 11,
-            "title": "Biff",
-            "description": "professional"
-        },
-        {
-            "id": 12,
-            "title": "Biff",
-            "description": "professional"
-        },
-        {
-            "id": 13,
-            "title": "Biff",
-            "description": "professional"
+          "url": "/assets/cms_blog.webp",
+          "url_fallback": "/assets/cms_blog.png",
+          "alt": "Blog post page"
         }
-    ]
+      ],
+      "button": {
+        "url": "https://github.com/Balintataw/Content-Management-Whitelabel",
+        "text": "See Repo"
+      }
+    },
+    {
+      "id": 1,
+      "title": "Ravenous",
+      "description": "A compendium of all things delicious, without all the 'backpacking through Spain' blog stories. *Under Current Development*",
+      "type": "personal",
+      "ref": "project1",
+      "modal": true,
+      "maxWidth": "60%",
+      "tech": ["Angular 7", "Firebase", "AngularFire", "CSS3", "Bootstrap 4"],
+      "images": [
+        {
+          "url": "/assets/ravenous_home_screen.webp",
+          "url_fallback": "/assets/ravenous_home_screen.png",
+          "alt": "Ravenous home scrren"
+        }
+      ],
+      "button": {
+        "url": "https://ravenous-recipes.firebaseapp.com",
+        "text": "See Demo"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Currency Converter",
+      "description": "A mobile app for converting currencies built with React Native and Fixer.io api. Bootstrapped with Expo.",
+      "type": "personal",
+      "ref": "project2",
+      "modal": true,
+      "maxWidth": "50%",
+      "tech": [
+        "React Native",
+        "Redux",
+        "React Saga",
+        "React Navigation 3",
+        "Expo"
+      ],
+      "images": [
+        {
+          "url": "/assets/currency_converter.webp",
+          "url_fallback": "/assets/currency_converter.jpg",
+          "alt": "Currency Converter Home Screen"
+        }
+      ],
+      "button": {
+        "url": "https://github.com/Balintataw/Currency-Converter",
+        "text": "See Repo"
+      }
+    },
+    {
+      "id": 3,
+      "title": "AR Car Performance",
+      "description": "Augmented Reality app, showcasing automobiles in real space, using Vuforia. Voice activated responsiveness utilizing WitAI to manipulate the cars features and change colors. This demo can be adapted to display any product for any company.",
+      "type": "personal",
+      "ref": "project3",
+      "modal": true,
+      "tech": ["Unity", "Vuforia", "C#", "WitAI"],
+      "images": [
+        {
+          "url": "/assets/ar_car_screen.webp",
+          "url_fallback": "/assets/ar_car_screen.jpg",
+          "alt": "AR Car home select screen"
+        },
+        {
+          "url": "/assets/ar_car_screen_01.webp",
+          "url_fallback": "/assets/ar_car_screen_01.jpg",
+          "alt": "Orange Lambo Front"
+        },
+        {
+          "url": "/assets/ar_car_screen_02.webp",
+          "url_fallback": "/assets/ar_car_screen_02.jpg",
+          "alt": "Orange Lambo side"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Meditations",
+      "description": "An app about what is, not what might be. Receive wisdom from the greatest minds in human history in the form of random quotes. Access to several additional features to help you focus during meditation sessions. Coming Soon for Android devices.",
+      "type": "professional",
+      "ref": "project4",
+      "modal": true,
+      "tech": ["React Native", "Firebase", "RNFirebase", "CSS3"],
+      "images": [
+        {
+          "url": "/assets/meditations_2.webp",
+          "url_fallback": "/assets/meditations_2.jpg",
+          "alt": "Message screen"
+        },
+        {
+          "url": "/assets/meditations_1.webp",
+          "url_fallback": "/assets/meditations_1.jpg",
+          "alt": "Meditations home screen"
+        },
+        {
+          "url": "/assets/meditations_3.webp",
+          "url_fallback": "/assets/meditations_3.jpg",
+          "alt": "Breath guidance screen"
+        }
+      ],
+      "button": {
+        "url": "",
+        "text": "Coming Soon"
+      }
+    },
+    {
+      "id": 5,
+      "title": "GeoFrenzy",
+      "description": "Geofencing for everyone. Work included sitewide redesign and rebuild of whitelabel portal using Vue.js. Start defining your own rules on your own spaces today. All you need is a geodomain to get started.",
+      "type": "professional",
+      "url": "https://www.smartfences.place"
+    },
+    {
+      "id": 6,
+      "title": "Stirfry Republic",
+      "description": "Best stirfry in the valley! Designed and prototyped a mobile app using Vue.js, Capacitor.js, and Ionic4. Feature focused on a robust user rewards program. (Closed)",
+      "type": "professional",
+      "url": ""
+    },
+    {
+      "id": 7,
+      "title": "Street Eats",
+      "description": "PunchCode Capstone project looking to connect hungry people with the local food truck business. Our very first React.js project. (Closed)",
+      "type": "professional",
+      "url": ""
+    },
+    {
+      "id": 8,
+      "title": "Street Eats - App",
+      "description": "React Native app to allow Street Eats users to find trucks on the go.",
+      "type": "professional",
+      "ref": "project8",
+      "modal": true,
+      "tech": ["React Native", "Expo", "Google Maps", "Redux"],
+      "images": [
+        {
+          "url": "/assets/street_eats_mobile.png",
+          "alt": "Street Eats Map screen"
+        }
+      ],
+      "button": {
+        "url": "https://github.com/classZero/street-eats-app",
+        "text": "See Repo"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Panahon",
+      "description": "A staight to the point weather app. Gives a user current and 5 day weather forecasts for their current location, or by any zip code.",
+      "type": "personal",
+      "ref": "project9",
+      "modal": true,
+      "maxWidth": "60%",
+      "tech": ["Ionic 4", "SCSS", "Angular 7"],
+      "images": [
+        {
+          "url": "/assets/panahon_loading.webp",
+          "url_fallback": "/assets/panahon_loading.jpg",
+          "alt": "Panahon Weather Load Screen"
+        },
+        {
+          "url": "/assets/panahon_home.webp",
+          "url_fallback": "/assets/panahon_home.jpg",
+          "alt": "Panahon Weather Home Screen"
+        }
+      ],
+      "badgeButton": {
+        "android": "/assets/google-play-badge.png",
+        "url": "http://play.google.com/store/apps/details?id=com.jossendal_dev.panahon"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Biffs App",
+      "description": ""
+    },
+    {
+      "id": 11,
+      "title": "Biff",
+      "description": "professional"
+    },
+    {
+      "id": 12,
+      "title": "Biff",
+      "description": "professional"
+    },
+    {
+      "id": 13,
+      "title": "Biff",
+      "description": "professional"
+    }
+  ]
 }
