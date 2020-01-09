@@ -29,7 +29,7 @@
       "id": 1,
       "title": "Ravenous",
       "description": "A compendium of all things delicious, without all the 'backpacking through Spain' blog stories. *Under Current Development*",
-      "type": "personal",
+      "type": "professional",
       "ref": "project1",
       "modal": true,
       "maxWidth": "60%",
@@ -145,35 +145,33 @@
     },
     {
       "id": 7,
-      "title": "Street Eats",
-      "description": "PunchCode Capstone project looking to connect hungry people with the local food truck business. Our very first React.js project. (Closed)",
-      "type": "professional",
-      "url": ""
-    },
-    {
-      "id": 8,
-      "title": "Street Eats - App",
-      "description": "React Native app to allow Street Eats users to find trucks on the go.",
+      "title": "Gulfstream 24hr",
+      "description": "React Native app assisting with all service needs of Gulfstream customers.",
       "type": "professional",
       "ref": "project8",
       "modal": true,
-      "tech": ["React Native", "Expo", "Google Maps", "Redux"],
+      "maxWidth": "60%",
+      "tech": ["React Native", "Google Maps", "Redux"],
       "images": [
         {
-          "url": "/assets/street_eats_mobile.png",
-          "alt": "Street Eats Map screen"
+          "url": "/assets/gulfstream_24hr_home.jpg",
+          "alt": "Gulfstream app home page"
+        },
+        {
+          "url": "/assets/gulfstream_24hr_map.jpg",
+          "alt": "Gulfstream app map page"
         }
       ],
-      "button": {
-        "url": "https://github.com/classZero/street-eats-app",
-        "text": "See Repo"
+      "badgeButton": {
+        "android": "/assets/google-play-badge.png",
+        "url": "https://play.google.com/store/apps/details?id=com.gulfstream.tfhrsupport&hl=en"
       }
     },
     {
-      "id": 9,
+      "id": 8,
       "title": "Panahon",
-      "description": "A staight to the point weather app. Gives a user current and 5 day weather forecasts for their current location, or by any zip code.",
-      "type": "personal",
+      "description": "A straight to the point weather app. Gives a user current and 5 day weather forecasts for their current location, or by any zip code.",
+      "type": "professional",
       "ref": "project9",
       "modal": true,
       "maxWidth": "60%",
@@ -196,9 +194,14 @@
       }
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "Biffs App",
       "description": ""
+    },
+    {
+      "id": 10,
+      "title": "Biff",
+      "description": "professional"
     },
     {
       "id": 11,
@@ -207,11 +210,6 @@
     },
     {
       "id": 12,
-      "title": "Biff",
-      "description": "professional"
-    },
-    {
-      "id": 13,
       "title": "Biff",
       "description": "professional"
     }

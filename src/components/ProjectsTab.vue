@@ -1,36 +1,40 @@
 <template>
-  <v-container dark fluid fill-height class="project-container pb-0">
-    <v-layout column>
-      <v-layout wrap>
-        <!-- Professional Projects section -->
-        <v-flex xs12 md6>
-          <v-layout column justify-center>
-            <h2 class="mb-0 category-title title-left">Professional Projects</h2>
-            <v-list class="professional-project-list list-scroll">
-              <v-list-tile
-                v-for="project in getProfessionalProjects"
-                :key="project.title"
-                class="project-list-item-left"
-              >
-                <v-list-tile-content>
-                  <a
-                    class="project-titles"
-                    @mouseenter="setPopupText(project.id)"
-                    @mouseleave="clearPopupText()"
-                    :href="project.url ? project.url : null"
-                    v-on="project && project.ref ? 
+  <div class="project-container">
+    <!-- <v-container dark fluid class="project-container"> -->
+    <!-- <v-layout column fill-height> -->
+    <v-layout wrap style="height: 100%;">
+      <!-- Professional Projects section -->
+      <v-flex xs12 md6>
+        <v-layout justify-center>
+          <!-- <h2 class="mb-0 category-title title-left">Previous Projects</h2> -->
+          <v-list class="professional-project-list list-scroll">
+            <v-list-tile
+              v-for="project in getProfessionalProjects"
+              :key="project.title"
+              class="project-list-item-left"
+            >
+              <v-list-tile-content>
+                <a
+                  class="project-titles"
+                  @mouseenter="setPopupText(project.id)"
+                  @mouseleave="clearPopupText()"
+                  :href="project.url ? project.url : null"
+                  v-on="project && project.ref ? 
                                             { click: () => openModal(project.ref) } : 
                                             null "
-                    _target="blank"
-                  >{{ project.title }}</a>
-                </v-list-tile-content>
-              </v-list-tile>
-            </v-list>
-          </v-layout>
-        </v-flex>
-        <!-- Personal Projects section -->
-        <v-flex xs12 md6 style="height:100%;">
-          <v-layout column justify-center style="height: 100%;">
+                  _target="blank"
+                >{{ project.title }}</a>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-layout>
+      </v-flex>
+      <!-- Personal Projects section -->
+      <v-flex xs12 md6>
+        <v-layout class="text-popup">
+          <p>{{ popupText }}</p>
+        </v-layout>
+        <!-- <v-layout column justify-center style="height: 100%;">
             <h2 class="mb-0 category-title title-right">Personal Projects</h2>
             <v-list class="personal-project-list list-scroll">
               <v-list-tile
@@ -50,16 +54,16 @@
                 </v-list-tile-content>
               </v-list-tile>
             </v-list>
-          </v-layout>
-        </v-flex>
-      </v-layout>
+        </v-layout>-->
+      </v-flex>
     </v-layout>
+    <!-- </v-layout> -->
 
     <!-- Text description center section -->
 
-    <v-layout class="text-popup">
+    <!-- <v-layout class="text-popup">
       <p>{{ popupText }}</p>
-    </v-layout>
+    </v-layout>-->
 
     <!-- Begin onerous modals section -->
 
@@ -119,7 +123,8 @@
         <!-- </v-btn> -->
       </div>
     </joss-dialog>
-  </v-container>
+    <!-- </v-container> -->
+  </div>
 </template>
 <script>
 import Dialog from "@/components/Dialog.vue";
@@ -147,7 +152,7 @@ export default {
       el.classList.toggle("animate-grow");
     },
     clearPopupText() {
-      this.popupText = "";
+      // this.popupText = "";
       let el = document.querySelector(".text-popup");
       el.classList.toggle("animate-grow");
     },
@@ -182,13 +187,14 @@ export default {
 <style lang="scss" scoped>
 .project-container {
   background-color: var(--v-secondary-base);
+  padding: 0px;
   background: radial-gradient(
-    circle farthest-side,
+    circle farthest-side at 80%,
     #fd775248,
     transparent,
     transparent
   );
-  // height: 85vh;
+  height: 100%;
 }
 .category-title {
   color: var(--v-accent-base);
@@ -229,15 +235,15 @@ export default {
 }
 .professional-project-list,
 .personal-project-list {
-  perspective: 40em;
-  margin-top: 1.2rem;
+  // perspective: 40em;
+  // margin-top: 1.2rem;
   // touch-action: manipulation;
 }
 .list-scroll {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 35rem;
-  padding-top: 2.7rem;
+  // height: 35rem;
+  // padding-top: 2.7rem;
   padding-bottom: 0;
   &::-webkit-scrollbar {
     // width: 0.3em;  /* scrollbar space */
@@ -318,12 +324,13 @@ export default {
 }
 // center text styles
 .text-popup {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 25%;
+  // position: absolute;
+  // top: 0;
+  // right: 120px;
+  // bottom: 0;
+  // left: 0;
+  // width: 25%;
+  // height: 100%;
   margin: 0 auto;
   z-index: 20;
   justify-content: center;
@@ -352,6 +359,14 @@ export default {
 /* *********  Queries section  *********** */
 
 @media screen and (max-width: 960px) {
+  .project-container {
+    background: radial-gradient(
+      circle farthest-side,
+      #fd775248,
+      transparent,
+      transparent
+    );
+  }
   .professional-project-list,
   .personal-project-list {
     perspective: none;
@@ -370,7 +385,7 @@ export default {
     }
   }
   .list-scroll {
-    height: auto;
+    // height: auto;
     padding-top: 0;
     padding-bottom: 1rem;
   }

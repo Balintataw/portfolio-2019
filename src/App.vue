@@ -1,27 +1,16 @@
 <template>
   <v-app id="inspire">
-    <v-layout
-      align-center
-      style="position: absolute; top:15px; left:15px; z-index:1;"
-    >
+    <v-layout align-center style="position: absolute; top:15px; left:15px; z-index:1;">
       <template v-if="$route.fullPath === '/'">
-        <v-btn
-          aria-label="open drawer button"
-          flat
-          icon
-          @click.stop="toggleDrawer"
-          ><v-icon>input</v-icon></v-btn
-        >
+        <v-btn aria-label="open drawer button" flat icon @click.stop="toggleDrawer">
+          <v-icon>input</v-icon>
+        </v-btn>
         <span class="locale">Las Vegas, NV</span>
       </template>
       <template v-else>
-        <v-btn
-          aria-label="close drawer button"
-          flat
-          icon
-          @click.stop="$router.go(-1)"
-          ><v-icon>arrow_back</v-icon></v-btn
-        >
+        <v-btn aria-label="close drawer button" flat icon @click.stop="$router.go(-1)">
+          <v-icon>arrow_back</v-icon>
+        </v-btn>
       </template>
     </v-layout>
     <v-navigation-drawer
@@ -32,6 +21,7 @@
       dark
       app
       :width="screenWidth"
+      :height="screenHeight"
     >
       <!-- All Main Drawer content is render here -->
       <drawer-layout>
@@ -70,8 +60,12 @@ export default {
   },
   computed: {
     screenWidth() {
-      return window.screen.width;
+      return window.innerWidth;
       // return document.body.clientWidth;
+    },
+    screenHeight() {
+      return window.innerHeight;
+      // return "100vh";
     },
     drawer() {
       return this.$store.getters.drawer;

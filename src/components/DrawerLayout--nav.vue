@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-toolbar tabs style="z-index: 2;">
+  <div style="height: 100%;">
+    <v-toolbar tabs style="z-index: 2; height: 14%;">
       <v-spacer />
 
       <slot name="close" />
@@ -16,8 +16,8 @@
       </v-tabs>
     </v-toolbar>
 
-    <v-tabs-items v-model="tabs">
-      <v-tab-item v-for="(tab, i) in tabComponents" :key="'component' + i">
+    <v-tabs-items v-model="tabs" style="height: 86%">
+      <v-tab-item style="height: 99%;" v-for="(tab, i) in tabComponents" :key="'component' + i">
         <component :is="tab.component" />
       </v-tab-item>
     </v-tabs-items>
