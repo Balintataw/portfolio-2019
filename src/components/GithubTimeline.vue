@@ -5,13 +5,24 @@
         class="my-3"
         style="font-size:2.5rem;"
         :style="{ color: $vuetify.theme.accent }"
-      >Recent Activity</h3>
-      <square-spinner style="position:absolute; right:-50px; top:20px;" v-if="working" />
+      >
+        Recent Activity
+      </h3>
+      <square-spinner
+        style="position:absolute; right:-50px; top:20px;"
+        v-if="working"
+      />
     </v-layout>
     <div class="changelog-list" v-if="repos.length > 0">
       <div class="line"></div>
-      <div v-for="repo in repos" :key="repo.id" class="changelog-item not-showing">
-        <div class="date" v-if="repo.pushed_at">{{ formatDate(repo.pushed_at) }}</div>
+      <div
+        v-for="repo in repos"
+        :key="repo.id"
+        class="changelog-item not-showing"
+      >
+        <div class="date" v-if="repo.pushed_at">
+          {{ formatDate(repo.pushed_at) }}
+        </div>
         <div style="flex-direction: column;">
           <p class="repo-name">{{ repo.name }}</p>
           <p class="repo-desc">{{ repo.description }}</p>
@@ -85,12 +96,10 @@ export default {
             : 0;
         });
         this.repos = sortedResults.slice(0, 15);
-        console.log("RESP", this.repos);
       })
       .catch(err => {
         this.working = false;
 
-        // eslint-disable-next-line no-console
         console.log("Error getting github data", err);
         throw new Error(err);
       })

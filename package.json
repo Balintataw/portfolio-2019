@@ -5,9 +5,9 @@
   "scripts": {
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "deploy": "vue-cli-service build && firebase deploy",
     "dev": "vue-cli-service serve",
-    "prod": "vue-cli-service serve --mode production",
-    "deploy": "vue-cli-service build && firebase deploy"
+    "prod": "vue-cli-service serve --mode production"
   },
   "dependencies": {
     "@firebase/app": "^0.3.17",
@@ -51,7 +51,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": 1
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

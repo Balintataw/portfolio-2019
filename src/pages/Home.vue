@@ -1,18 +1,24 @@
 <template>
   <v-layout row fill-height style="position:relative;">
     <v-flex xs9></v-flex>
-    <v-flex xs3 class="right-bar" :style="{backgroundColor: $vuetify.theme.primary}">
+    <v-flex
+      xs3
+      class="right-bar"
+      :style="{ backgroundColor: $vuetify.theme.primary }"
+    >
       <div class="overhyped-tag-container">
         <p class="overhyped-tag-line">driven</p>
         <p class="overhyped-tag-line">dauntless</p>
         <p class="overhyped-tag-line">defiant</p>
         <p class="overhyped-tag-line">design</p>
       </div>
-      <p :style="{color: $vuetify.theme.accent}" class="vertical-text">Development</p>
+      <p :style="{ color: $vuetify.theme.accent }" class="vertical-text">
+        Development
+      </p>
       <h1 class="text-headline">Jossendal</h1>
-      <p
-        class="text-sub-headline"
-      >Specializing in front end design, development, and user experience.</p>
+      <p class="text-sub-headline">
+        Specializing in app development, design, and user experience.
+      </p>
     </v-flex>
   </v-layout>
 </template>
@@ -89,7 +95,7 @@
 }
 @media only screen and (max-width: 575px) {
   .overhyped-tag-container {
-    left: -60px;
+    left: -70px;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -105,4 +111,3 @@
   }
 }
 </style>
-

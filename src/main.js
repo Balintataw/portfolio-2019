@@ -1,4 +1,5 @@
 import Vue from "vue";
+import "./plugins/vuetify";
 import Vuetify from "vuetify";
 // import VeeValidate from 'vee-validate';
 // import VueAnalytics from 'vue-analytics';

@@ -1,14 +1,27 @@
 <template>
   <v-app id="inspire">
-    <v-layout align-center style="position: absolute; top:15px; left:15px; z-index:1;">
+    <v-layout
+      align-center
+      style="position: absolute; top:15px; left:15px; z-index:1;"
+    >
       <template v-if="$route.fullPath === '/'">
-        <v-btn aria-label="open drawer button" flat icon @click.stop="toggleDrawer">
+        <v-btn
+          aria-label="open drawer button"
+          flat
+          icon
+          @click.stop="toggleDrawer"
+        >
           <v-icon>input</v-icon>
         </v-btn>
         <span class="locale">Las Vegas, NV</span>
       </template>
       <template v-else>
-        <v-btn aria-label="close drawer button" flat icon @click.stop="$router.go(-1)">
+        <v-btn
+          aria-label="close drawer button"
+          flat
+          icon
+          @click.stop="$router.go(-1)"
+        >
           <v-icon>arrow_back</v-icon>
         </v-btn>
       </template>
@@ -53,25 +66,33 @@ export default {
   components: {
     "drawer-layout": DrawerLayout
   },
+  data() {
+    return {
+      screenWidth: window.innerWidth,
+      screenHeight: window.innerHeight
+    };
+  },
   methods: {
     toggleDrawer() {
       this.$store.dispatch("toggleDrawer");
+    },
+    resizeWindow(event) {
+      this.screenWidth = event.target.innerWidth;
+      this.screenHeight = event.target.innerHeight;
     }
   },
   computed: {
-    screenWidth() {
-      return window.innerWidth;
-      // return document.body.clientWidth;
-    },
-    screenHeight() {
-      return window.innerHeight;
-      // return "100vh";
-    },
     drawer() {
       return this.$store.getters.drawer;
     }
   },
+  destroyed() {
+    window.removeEventListener("resize", this.resizeWindow);
+  },
   mounted() {
+    // ensures the overlay resizes properly
+    window.addEventListener("resize", this.resizeWindow);
+
     // make the whole serviceworker process into a promise so later on we can
     // listen to it and in case new content is available a toast will be shown
     window.isUpdateAvailable = new Promise(function(resolve) {
@@ -131,7 +152,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 #main-content {
   position: relative;
   background-image: url("/assets/vegas.jpg");
@@ -144,6 +165,9 @@ export default {
   margin-left: 60px;
   font-size: 8px;
   color: rgb(20, 20, 20, 0.4);
+}
+.v-window__container {
+  height: 100%;
 }
 @media only screen and (max-width: 450px) {
   .locale {

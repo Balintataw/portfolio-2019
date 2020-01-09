@@ -1,15 +1,12 @@
 <template>
   <div class="project-container">
-    <!-- <v-container dark fluid class="project-container"> -->
-    <!-- <v-layout column fill-height> -->
     <v-layout wrap style="height: 100%;">
-      <!-- Professional Projects section -->
-      <v-flex xs12 md6>
-        <v-layout justify-center>
-          <!-- <h2 class="mb-0 category-title title-left">Previous Projects</h2> -->
+      <!-- Projects section -->
+      <v-flex xs12 md6 style="height: 100%;">
+        <v-layout justify-center align-center fill-height>
           <v-list class="professional-project-list list-scroll">
             <v-list-tile
-              v-for="project in getProfessionalProjects"
+              v-for="project in getProjects"
               :key="project.title"
               class="project-list-item-left"
             >
@@ -19,69 +16,50 @@
                   @mouseenter="setPopupText(project.id)"
                   @mouseleave="clearPopupText()"
                   :href="project.url ? project.url : null"
-                  v-on="project && project.ref ? 
-                                            { click: () => openModal(project.ref) } : 
-                                            null "
+                  v-on="
+                    project && project.ref
+                      ? { click: () => openModal(project.ref) }
+                      : null
+                  "
                   _target="blank"
-                >{{ project.title }}</a>
+                  >{{ project.title }}</a
+                >
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
         </v-layout>
       </v-flex>
-      <!-- Personal Projects section -->
+      <!-- Project blurb section -->
       <v-flex xs12 md6>
         <v-layout class="text-popup">
           <p>{{ popupText }}</p>
         </v-layout>
-        <!-- <v-layout column justify-center style="height: 100%;">
-            <h2 class="mb-0 category-title title-right">Personal Projects</h2>
-            <v-list class="personal-project-list list-scroll">
-              <v-list-tile
-                v-for="project in getPersonalProjects"
-                :key="project.title"
-                class="project-list-item-right"
-              >
-                <v-list-tile-content>
-                  <a
-                    class="project-titles"
-                    @mouseenter="setPopupText(project.id)"
-                    @mouseleave="clearPopupText()"
-                    v-on="project && project.ref ? 
-                                            { click: () => openModal(project.ref) } : 
-                                            null "
-                  >{{ project.title }}</a>
-                </v-list-tile-content>
-              </v-list-tile>
-            </v-list>
-        </v-layout>-->
       </v-flex>
     </v-layout>
-    <!-- </v-layout> -->
-
-    <!-- Text description center section -->
-
-    <!-- <v-layout class="text-popup">
-      <p>{{ popupText }}</p>
-    </v-layout>-->
 
     <!-- Begin onerous modals section -->
 
     <joss-dialog
       v-for="project in getProjectsWithModal"
-      :maxWidth="project.maxWidth || '80%'"
+      maxWidth="80%"
       :ref="project.ref"
-      :key="project.title+project.id"
+      :key="project.title + project.id"
     >
       <div slot="modaltitle">{{ project.title }}</div>
       <div slot="modalcontent">
         <v-layout wrap>
           <v-flex xs12 sm3>
-            <h4>Tech Used:</h4>
+            <h4 class="modal-tech-title">Tech Used:</h4>
             <ul>
-              <li v-for="item in project.tech" :key="project.title + item">{{ item }}</li>
+              <li
+                class="modal-tech-list-item"
+                v-for="item in project.tech"
+                :key="project.title + item"
+              >
+                {{ item }}
+              </li>
             </ul>
-            <p class="pt-2">{{ project.description }}</p>
+            <p class="pt-2 modal-tech-description">{{ project.description }}</p>
           </v-flex>
           <v-flex xs12 sm9>
             <v-layout wrap justify-space-around>
@@ -90,9 +68,13 @@
                                 <zoom-on-hover img-normal="/assets/cms_admin.png" img-zoom="/assets/cms_admin.png" :scale="2" imgAlt="CMS Dashboard"></zoom-on-hover>
                             </div>
               <img @mousemove="zoomIn($event)" @mouseout="zoomOut($event)" src="../assets/cms_admin.png" class="project-images" alt="CMS Dashboard"/>-->
-              <picture v-for="(img, i) in project.images" :key="img.alt+i">
+              <picture v-for="(img, i) in project.images" :key="img.alt + i">
                 <source :srcset="img.url" type="image/webp" />
-                <img :src="img.url_fallback" class="project-images" :alt="img.alt" />
+                <img
+                  :src="img.url_fallback"
+                  class="project-images"
+                  :alt="img.alt"
+                />
               </picture>
             </v-layout>
           </v-flex>
@@ -105,7 +87,8 @@
           :disabled="!project.button.url"
           right
           @click="projectLink(project.button.url)"
-        >{{ project.button.text }}</v-btn>
+          >{{ project.button.text }}</v-btn
+        >
       </div>
       <div slot="detailsButton" v-if="project.badgeButton">
         <!-- <v-btn 
@@ -123,7 +106,6 @@
         <!-- </v-btn> -->
       </div>
     </joss-dialog>
-    <!-- </v-container> -->
   </div>
 </template>
 <script>
@@ -152,7 +134,7 @@ export default {
       el.classList.toggle("animate-grow");
     },
     clearPopupText() {
-      // this.popupText = "";
+      // this.popupText = "Check out what we're currently working on at Jossendal Development";
       let el = document.querySelector(".text-popup");
       el.classList.toggle("animate-grow");
     },
@@ -166,12 +148,8 @@ export default {
     }
   },
   computed: {
-    getPersonalProjects() {
-      return this.projects.data.filter(p => {
-        return p.type === "personal";
-      });
-    },
-    getProfessionalProjects() {
+    getProjects() {
+      // TODO: remove p.type and just grab all projects from json
       return this.projects.data.filter(p => {
         return p.type === "professional";
       });
@@ -188,25 +166,14 @@ export default {
 .project-container {
   background-color: var(--v-secondary-base);
   padding: 0px;
+  height: 100%;
   background: radial-gradient(
     circle farthest-side at 80%,
     #fd775248,
     transparent,
     transparent
   );
-  height: 100%;
 }
-.category-title {
-  color: var(--v-accent-base);
-  font-size: 1.8rem;
-  &.title-right {
-    align-self: flex-end;
-  }
-  &.title-left {
-    align-self: flex-start;
-  }
-}
-
 .project-images {
   max-height: 200px;
   max-width: 300px;
@@ -228,21 +195,13 @@ export default {
   color: var(--v-primaryDark-base);
 }
 .professional-project-list {
-  margin-right: auto;
-}
-.personal-project-list {
-  margin-left: auto;
-}
-.professional-project-list,
-.personal-project-list {
-  // perspective: 40em;
-  // margin-top: 1.2rem;
-  // touch-action: manipulation;
+  // margin-right: auto;
 }
 .list-scroll {
   overflow-y: auto;
   overflow-x: hidden;
   // height: 35rem;
+  // height: 100%;
   // padding-top: 2.7rem;
   padding-bottom: 0;
   &::-webkit-scrollbar {
@@ -258,26 +217,14 @@ export default {
   //     -webkit-box-shadow: inset 0 0 6px rgba(111,111,111,0.7);
   // }
 }
-.project-list-item-right > div > div,
-.title-right {
-  align-items: flex-end;
-}
 .project-list-item-left > div > div {
-  align-items: flex-start;
+  align-items: center;
 }
 @for $i from 1 to 10 {
   // scss loop syntax to give cascading effect of animation 'drop<direction>'
   .project-list-item-left:nth-child(#{$i}) {
     animation: dropleft 0.5s;
     -webkit-animation: dropleft 0.5s;
-    animation-delay: $i * 0.05s;
-    -webkit-animation-delay: $i * 0.05s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-  }
-  .project-list-item-right:nth-child(#{$i}) {
-    animation: dropright 0.5s;
-    -webkit-animation: dropright 0.5s;
     animation-delay: $i * 0.05s;
     -webkit-animation-delay: $i * 0.05s;
     animation-fill-mode: both;
@@ -298,20 +245,6 @@ export default {
     -webkit-transform: translateY(0px) rotateY(35deg);
   }
 }
-@keyframes dropright {
-  from {
-    opacity: 0;
-    margin-bottom: 0;
-    transform: translateY(-50px) rotateY(0deg);
-    -webkit-transform: translateY(-50px) rotateY(0deg);
-  }
-  to {
-    opacity: 1;
-    margin-bottom: 2rem;
-    transform: translateY(0px) rotateY(-35deg);
-    -webkit-transform: translateY(0px) rotateY(-35deg);
-  }
-}
 @keyframes recenter {
   from {
     transform: rotateY(0deg);
@@ -330,7 +263,7 @@ export default {
   // bottom: 0;
   // left: 0;
   // width: 25%;
-  // height: 100%;
+  height: 100%;
   margin: 0 auto;
   z-index: 20;
   justify-content: center;
@@ -343,7 +276,8 @@ export default {
 .text-popup > p {
   text-align: center;
   color: var(--v-primary-base);
-  font-size: 1.3rem;
+  font-size: 2rem;
+  width: 90%;
 }
 @keyframes grow {
   from {
@@ -354,6 +288,17 @@ export default {
     transform: scale(1);
     -webkit-transform: scale(1);
   }
+}
+.modal-tech-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+.modal-tech-list-item {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+.modal-tech-description {
+  font-size: 1.3rem;
 }
 
 /* *********  Queries section  *********** */
@@ -367,15 +312,11 @@ export default {
       transparent
     );
   }
-  .professional-project-list,
-  .personal-project-list {
-    perspective: none;
-    -webkit-perspective: none;
+  .professional-project-list {
     margin: 0 auto;
   }
   @for $i from 1 to 10 {
-    .project-list-item-left:nth-child(#{$i}),
-    .project-list-item-right:nth-child(#{$i}) {
+    .project-list-item-left:nth-child(#{$i}) {
       animation: recenter 0.5s;
       -webkit-animation: recenter 0.5s;
       animation-delay: $i * 0.05s;
@@ -386,37 +327,22 @@ export default {
   }
   .list-scroll {
     // height: auto;
-    padding-top: 0;
+    // padding-top: 0;
     padding-bottom: 1rem;
-  }
-  .category-title {
-    &.title-right,
-    &.title-left {
-      align-self: center;
-    }
   }
   .text-popup {
     visibility: hidden;
   }
   .project-titles {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
-  .project-list-item-right > div > div,
   .project-list-item-left > div > div {
     align-items: center;
-  }
-  .category-title {
-    &.title-right {
-      text-align: center;
-    }
-    &.title-left {
-      text-align: center;
-    }
   }
 }
 @media screen and (max-width: 480px) {
   .project-titles {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 </style>

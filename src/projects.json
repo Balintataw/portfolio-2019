@@ -28,7 +28,7 @@
     {
       "id": 1,
       "title": "Ravenous",
-      "description": "A compendium of all things delicious, without all the 'backpacking through Spain' blog stories. *Under Current Development*",
+      "description": "A compendium of all things delicious, without all the 'backpacking through Spain' blog stories.",
       "type": "professional",
       "ref": "project1",
       "modal": true,
@@ -75,27 +75,18 @@
     },
     {
       "id": 3,
-      "title": "AR Car Performance",
-      "description": "Augmented Reality app, showcasing automobiles in real space, using Vuforia. Voice activated responsiveness utilizing WitAI to manipulate the cars features and change colors. This demo can be adapted to display any product for any company.",
-      "type": "personal",
+      "title": "Chick-Fil-A",
+      "description": "Mobile toolkit for streamlining the onboarding of new employees, managing daily tasks, and creating operational checklists.",
+      "type": "professional",
       "ref": "project3",
       "modal": true,
-      "tech": ["Unity", "Vuforia", "C#", "WitAI"],
+      "maxWidth": "40%",
+      "tech": ["React Native", "Typescript", "GraphQL", "AWS"],
       "images": [
         {
-          "url": "/assets/ar_car_screen.webp",
-          "url_fallback": "/assets/ar_car_screen.jpg",
+          "url": "/assets/CFA_signin.png",
+          "url_fallback": "/assets/CFA_signin.png",
           "alt": "AR Car home select screen"
-        },
-        {
-          "url": "/assets/ar_car_screen_01.webp",
-          "url_fallback": "/assets/ar_car_screen_01.jpg",
-          "alt": "Orange Lambo Front"
-        },
-        {
-          "url": "/assets/ar_car_screen_02.webp",
-          "url_fallback": "/assets/ar_car_screen_02.jpg",
-          "alt": "Orange Lambo side"
         }
       ]
     },
@@ -146,12 +137,12 @@
     {
       "id": 7,
       "title": "Gulfstream 24hr",
-      "description": "React Native app assisting with all service needs of Gulfstream customers.",
+      "description": "React Native app assisting with all customer and mechanical service needs of Gulfstream owners.",
       "type": "professional",
       "ref": "project8",
       "modal": true,
       "maxWidth": "60%",
-      "tech": ["React Native", "Google Maps", "Redux"],
+      "tech": ["React Native", "Google Maps", "Redux", "Offline Capable"],
       "images": [
         {
           "url": "/assets/gulfstream_24hr_home.jpg",
