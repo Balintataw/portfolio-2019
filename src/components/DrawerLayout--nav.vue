@@ -1,6 +1,6 @@
 <template>
   <div style="height: 100%;">
-    <v-toolbar tabs style="z-index: 2; height: 14%;">
+    <v-toolbar tabs style="z-index: 2;">
       <v-spacer />
 
       <slot name="close" />

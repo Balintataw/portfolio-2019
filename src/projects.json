@@ -129,10 +129,10 @@
     },
     {
       "id": 6,
-      "title": "Stirfry Republic",
-      "description": "Best stirfry in the valley! Designed and prototyped a mobile app using Vue.js, Capacitor.js, and Ionic4. Feature focused on a robust user rewards program. (Closed)",
+      "title": "Kasama",
+      "description": "Meaning 'To include', Kasama is an activity manager with a hint of social media app and chat application mixed in.",
       "type": "professional",
-      "url": ""
+      "url": "https://kasama-app.azurewebsites.net/"
     },
     {
       "id": 7,
